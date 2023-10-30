@@ -1,6 +1,6 @@
 <?php      
         include('connectdb.php');  
-        $con = connectdb()
+        $con = connectdb();
         $email = $_POST['email'];  
         $unencrypted_password = $_POST['pass'];  
           
@@ -12,8 +12,8 @@
 
             $hashed_pass = ($unencrypted_password, PASSWORD_DEFAULT);
 
-            $sql = "select * from login where email = '$email'";  
-            $result = mysqli_query($con, $sql);  
+            $query = "select * from Admin";  
+            $result = mysqli_query($con, $query);  
             if($result) {
                 print_r($result);
                 echo $hashed_pass;
