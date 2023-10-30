@@ -1,20 +1,16 @@
-<?php 
-include "tools.php";
-?>
 
 <html>  
     <head>  
         <title>PHP login system</title>  
-        // insert style.css file inside index.html  
-        <link rel = "stylesheet" type = "text/css" href = "style.css">   
+        <link rel = "stylesheet" type = "text/css" href = "CSS/main.css">   
     </head>  
     <body>  
         <div id = "frm">  
             <h1>Login</h1>  
-            <form name="login" action = "authentication.php" onsubmit = "return validation()" method = "POST">  
+            <form name="login" action = "auth.php" onsubmit = "return validation()" method = "POST">  
                 <p>  
-                    <label> UserName: </label>  
-                    <input type="text" id="email" name ="user" />  
+                    <label> Email: </label>  
+                    <input type="text" id="email" name ="email" />  
                 </p>  
                 <p>  
                     <label> Password: </label>  
@@ -24,8 +20,7 @@ include "tools.php";
                     <input type="submit" id="btn" value="Login" />  
                 </p>  
             </form>  
-        </div>  
-        // validation for empty field   
+        </div> 
         <script>  
                 function validation()  
                 {  
@@ -38,12 +33,12 @@ include "tools.php";
                     else  
                     {  
                         if(email.length=="") {  
-                            alert("User Name is empty");  
+                            alert("Email field is empty");  
                             return false;  
                         }   
                         if (password.length=="") {  
-                        alert("Password field is empty");  
-                        return false;  
+                            alert("Password field is empty");  
+                            return false;  
                         }  
                     }                             
                 }  
