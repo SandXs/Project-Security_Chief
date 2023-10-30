@@ -2,7 +2,7 @@
         $host = "localhost";  
         $user = "root";  
         $password = '';  
-        $db_name = "javatpoint";  
+        $db_name = "SecChief";  
           
         //$con = connectdb();
         function connectdb() {
