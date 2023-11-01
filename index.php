@@ -1,48 +1,21 @@
+<?php 
+include './Header.php';
+?>
+<!DOCTYPE html>
+<html lang="en">
 
-<html>  
-<head>  
-        <title>PHP login system</title>  
-        <link rel = "stylesheet" type = "text/css" href = "CSS/main.css">   
-    </head>  
-    <body>  
-        <div w3-include-html="./Header.html"></div>
-        <div id = "frm">  
-            <h1>Login</h1>  
-            <form name="login" action = "functions/auth.php" onsubmit = "return validation()" method = "POST">  
-                <p>  
-                    <label> Email: </label>  
-                    <input type="text" id="email" name ="email" />  
-                </p>  
-                <p>  
-                    <label> Password: </label>  
-                    <input type="password" id="pass" name="pass" />  
-                </p>  
-                <p>     
-                    <input type="submit" id="btn" value="Login" />  
-                </p>  
-            </form>  
-        </div> 
-        <script>  
-                function validation()  
-                {  
-                    var email=document.login.email.value;  
-                    var password=document.login.pass.value;  
-                    if(email.length=="" && password.length=="") {  
-                        alert("User Name and Password fields are empty");  
-                        return false;  
-                    }  
-                    else  
-                    {  
-                        if(email.length=="") {  
-                            alert("Email field is empty");  
-                            return false;  
-                        }   
-                        if (password.length=="") {  
-                            alert("Password field is empty");  
-                            return false;  
-                        }  
-                    }                             
-                }  
-            </script>  
-    </body>     
-</html>  
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<script>
+    setTimeout(function(){
+        window.location.reload(1);
+    }, 5000);
+</script>
+<body>
+
+</body>
+
+</html>
