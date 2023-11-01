@@ -1,10 +1,11 @@
 
 <html>  
-    <head>  
+<head>  
         <title>PHP login system</title>  
         <link rel = "stylesheet" type = "text/css" href = "CSS/main.css">   
     </head>  
     <body>  
+        <div w3-include-html="./Header.html"></div>
         <div id = "frm">  
             <h1>Login</h1>  
             <form name="login" action = "functions/auth.php" onsubmit = "return validation()" method = "POST">  

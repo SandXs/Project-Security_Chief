@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="header-container">
+        <nav>
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">About us</a></li>
+                <li><a href="">Info</a></li>
+                <li><a href="">Nieuws</a></li>
+            <div class="apart_list">
+                <li><a href="">Login</a></li>
+                <li><a href="">Contact</a></li>
+            </div>
+            </ul>
+        </nav>
+    </div>
+</body>
+</html>
