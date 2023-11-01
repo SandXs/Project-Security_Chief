@@ -1,7 +1,7 @@
 <?php      
-        $host = "localhost";  
-        $user = "root";  
-        $password = '';  
+        $host = " 127.0.0.1 ";  
+        $user = "DBAdmin";  
+        $password = 'ABC1234';  
         $db_name = "secchief";  
           
         //$con = connectdb();

@@ -2,7 +2,8 @@
 <html>  
     <head>  
         <title>PHP login system</title>  
-        <link rel = "stylesheet" type = "text/css" href = "CSS/main.css">   
+        <link rel = "stylesheet" type = "text/css" href = "CSS/main.css">
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     </head>  
     <body>  
         <div id = "frm">  
@@ -35,11 +36,19 @@
                         if(email.length=="") {  
                             alert("Email field is empty");  
                             return false;  
-                        }   
-                        if (password.length=="") {  
+                        } 
+                        else if (password.length=="") 
+                        {  
                             alert("Password field is empty");  
                             return false;  
-                        }  
+                        } 
+                        else 
+                        {
+                            $.post("functions/auth.php", {
+                                email: email,
+                                pass: password
+                            });
+                        }
                     }                             
                 }  
             </script>  
