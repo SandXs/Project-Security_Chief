@@ -41,7 +41,8 @@
     left: 80%;
     bottom: 50%;
     transition: all 500ms ease-in-out;
-    text-shadow: 0px 2px 6px  rgba(0, 0, 0, 0.6);
+    text-shadow: 1px 2px 4px  rgba(0, 0, 0, 0.6);
+    cursor: pointer;
 }
 .menu_btn i{
  font-size: 50px;
