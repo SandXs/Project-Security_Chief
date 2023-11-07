@@ -18,7 +18,7 @@ setTimeout(function() {
 
 <body>
     <input type="checkbox" id="menu_bar" checked>
-    <input type="checkbox" id="menu_btn"> 
+    <input type="checkbox" id="menu_btn" checked> 
     <div class="header-container">
         <label for="menu_bar" class="menu_bar"><i class="fa-solid fa-bars"></i></label>
         <nav class="nav-container">

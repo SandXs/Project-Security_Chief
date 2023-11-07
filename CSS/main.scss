@@ -1,13 +1,21 @@
 @import "./pagestyle/login.scss";
 @import "./pagestyle/Header";
+@import "./pagestyle/intro";
 @import "./pagestyle/tools";
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     font-family: Arial, sans-serif;
     background-color: $primery_color_1;
+    position: relative;
 }
+
+.intro-sec{
+    display: block;
+}
+/*main body*/
