@@ -1,29 +1,14 @@
-/* Login */
-#frm {
-  border: solid gray 1px;
-  width: 25%;
-  border-radius: 2px;
-  margin: 120px auto;
-  background: white;
-  padding: 50px;
-}
-
-#btn {
-  color: #fff;
-  background: #337ab7;
-  padding: 7px;
-  margin-left: 70%;
-}
-
 /* Dashboard */
+// *{box-sizing: border-box;}
+
 /* The popup form - hidden by default */
 #myForm {
-  display: none;
-  position: absolute;
-  z-index: 999;
-  background-color: rgba(68, 68, 68, 0.6);
-  width: 100%;
-  height: 100%;
+    display: none;
+    position: absolute;
+    z-index: 999;
+    background-color: rgba($color: #444444, $alpha: 0.6);
+    width:100%;
+    height:100%;
 }
 
 /* Button used to open the contact form - fixed at the bottom of the page */
@@ -38,13 +23,17 @@
 
 /* Add styles to the form container */
 .form-container {
-  width: 70%;
-  margin: auto;
-  background-color: white;
-  border: 3px solid #f1f1f1;
+    width: 70%;
+    margin: auto;
+    background-color: white;
+    border: 3px solid #f1f1f1;
 }
 
 /* Full-width input fields */
+.form-container input[type=text], .form-container input[type=email] {
+  
+}
+
 /* When the inputs get focus, do something */
 .form-container input[type=text]:focus, .form-container input[type=email]:focus {
   background-color: #ddd;
@@ -59,7 +48,7 @@
   border: none;
   cursor: pointer;
   width: 100%;
-  margin-bottom: 10px;
+  margin-bottom:10px;
   opacity: 0.8;
 }
 
@@ -71,4 +60,4 @@
 /* Add some hover effects to buttons */
 .form-container .btn:hover, .open-button:hover {
   opacity: 1;
-}/*# sourceMappingURL=main.css.map */
+} 
