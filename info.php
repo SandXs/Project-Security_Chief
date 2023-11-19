@@ -3,11 +3,7 @@
 <?php 
 include './Header.php';
 ?>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-</head>
+
 <script>
 setTimeout(function() {
     window.location.reload(1);
@@ -32,8 +28,9 @@ setTimeout(function() {
                     </div>
 
                 </div>
-                <div class="introFoto-container">
-                    <img src="./img/Security_1.png" alt="niet gevonden" class="intro-foto">
+                <div class="gif">
+                    <img src="./img/fishing2V1.gif" alt="niet gevonden" class="intro-foto">
+                    <!-- <div class="gif"></div> -->
                 </div>
             </div>
         </div>
@@ -51,19 +48,7 @@ setTimeout(function() {
                     <button typ="button" class="readBtn-wraper"><a href="#" class="read-btn">Read more</a></button>
                 </div>
             </div>
-            <div class="info-wraper">
-                <div class="info-foto-container">
-                    <img src="./img/scam.jpg" alt="">
-                </div>
-                <div class="info-text">
-                    <h1> Scam </h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Maecenas et iaculis risus. Integer rhoncus, ipsum at congue commodo,
-                        purus velit viverra massa, </p>
-                    <button typ="button" class="readBtn-wraper"><a href="#" class="read-btn">Read more</a></button>
-                </div>
-            </div>
-        </div>
+           
 
 
     </section>

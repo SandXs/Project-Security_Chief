@@ -4,10 +4,15 @@
 .header-container{
     display:inline-block;
     background-color: $primery_color_2;
-    position: relative;
+    position: fixed;
+    z-index: 999;
+    bottom: 0;
+    top: 0;
+    left: 0;
     transition: all 500ms ease-in-out;
     box-shadow: 1px 2px 4px 3px rgba(0, 0, 0, 0.6);
 }
+
 .nav-container ul{
   display: flex;
   background-color: $primery_color_2;
@@ -16,17 +21,14 @@
   min-height:100vh;
   padding: 10px;
   flex-wrap: wrap;
+  width: 100%;
+    list-style: none;
 }
 .list_item a{
     text-decoration: none;
     margin-top: 2rem;
     padding: 10px;
     width: 100%;
-}
-.nav-container ul{
-    width: 100%;
-    list-style: none;
-
 }
 .nav-container ul li{
     display: block;
@@ -38,7 +40,7 @@
 }
 .menu_btn{
     position: absolute;
-    left: 80%;
+    left: 90%;
     bottom: 50%;
     transition: all 500ms ease-in-out;
     text-shadow: 1px 2px 4px  rgba(0, 0, 0, 0.6);
@@ -48,21 +50,23 @@
  font-size: 50px;
  color: #8EACCD;
 }
-#menu_btn{
-display: none;
-}
+
 #menu_bar{
     display: none;
 }
 .menu_bar{
-    display: none;
+    display: block;
+    position: fixed;
+    left:0;
+    top: 10px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 22px;
+    z-index: 9999;
 }
-#menu_btn:checked ~ .header-container{
-    right: 105px;
-}
-
-#menu_btn:checked ~ .header-container .menu_btn {
-    transform: rotate(-175deg);
+#menu_bar:checked ~ .header-container{
+    left: -200px;
+    
 }
 @media only screen and (max-width: 850px) {
     .menu_btn{
@@ -73,15 +77,20 @@ display: none;
         justify-content: center;
         width: 100%;
     }
-    .menu_bar{
-        display: block;
-        position: absolute;
-        right: 1.5%;
-        top: 10px;
-        color: #fff;
-        font-size: 25px;
-    }
     #menu_bar:checked ~ .header-container{
-        right: 90%;
+        left: -100%;
     }
 }
+
+// #menu_btn{
+// display: none;
+// }
+
+
+// #menu_btn:checked ~ .header-container{
+//     left: -105px;
+// }
+
+// #menu_btn:checked ~ .header-container .menu_btn {
+//     transform: rotate(-175deg);
+// }

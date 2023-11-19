@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Document</title>
+    <title>Security chief</title>
 </head>
 <script>
 setTimeout(function() {
@@ -18,9 +18,10 @@ setTimeout(function() {
 
 <body>
     <input type="checkbox" id="menu_bar" checked>
-    <input type="checkbox" id="menu_btn" checked> 
+    <!-- <input type="checkbox" id="menu_btn" >  -->
+    <label for="menu_bar" class="menu_bar"><i class="fa-solid fa-bars"></i></label>
     <div class="header-container">
-        <label for="menu_bar" class="menu_bar"><i class="fa-solid fa-bars"></i></label>
+       
         <nav class="nav-container">
             <ul>
                 <div class="list1">
@@ -31,12 +32,12 @@ setTimeout(function() {
                         </a>
                     </li>
                     <li class="list_item">
-                        <a href="#"><i class="fa-solid fa-address-card"></i>
+                        <a href="./AboutUs.php"><i class="fa-solid fa-address-card"></i>
                             About us
                         </a>
                     </li>
                     <li class="list_item">
-                        <a href="#">
+                        <a href="./info.php">
                             <i class="fa-solid fa-circle-info"></i>
                             Info
                         </a>
@@ -47,7 +48,7 @@ setTimeout(function() {
                         </a>
                     </li>
                 </div>
-                <label for="menu_btn" class="menu_btn" ><i class="fa-regular fa-circle-left"></i></label>
+                <!-- <label for="menu_btn" class="menu_btn" ><i class="fa-regular fa-circle-left"></i></label> -->
                 <div class="list2">
                     <li class="list_item">
                         <a href="#">
@@ -64,6 +65,3 @@ setTimeout(function() {
         </nav>
        
     </div>
-</body>
-
-</html>
