@@ -1,7 +1,6 @@
-<?php session_start(); ?>
-<?php include "Header.php" ?>
-<?php include "functions/connectdb.php" ?>
 <?php
+session_start();
+include("Header.php");
 
 if (isset($_POST['signin'])) {
   $con = connectdb();
@@ -31,13 +30,6 @@ if (isset($_POST['signin'])) {
   }
 }
 
-function test_input($con,$data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  $data = mysqli_real_escape_string($con,$data);
-  return $data;
-}
 ?>
 <div class="container col-4 border rounded bg-light mt-5" style='--bs-bg-opacity: .5;'>
   <h1 class="text-center">Sign In</h1>
