@@ -76,10 +76,10 @@
 .menu_bar {
   display: block;
   position: fixed;
-  left: 0;
+  left: 10px;
   top: 10px;
   cursor: pointer;
-  color: #fff;
+  color: #000;
   font-size: 22px;
   z-index: 9999;
 }
@@ -282,14 +282,15 @@
     filter: brightness(50%);
   }
   .info-text {
-    width: 80%;
+    width: 100%;
   }
   .info-wraper {
-    background-color: #8EACCD;
     padding: 20px;
     height: 100%;
-    width: 70%;
+    width: 100%;
     border-radius: 24px;
+    border-bottom: 2px solid #8EACCD;
+    border-top: 2px solid #8EACCD;
   }
   .gif {
     display: none;
