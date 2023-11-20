@@ -2,6 +2,7 @@
 @import "./pagestyle/Header";
 @import "./pagestyle/intro";
 @import "./pagestyle/tools";
+@import "./pagestyle/contact";
 
 * {
     margin: 0;
@@ -15,3 +16,8 @@ body {
     position: relative;
 }
 
+.page-container {
+    max-width: 100%;
+    height: auto;
+    position: relative;
+}

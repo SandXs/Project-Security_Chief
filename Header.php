@@ -51,7 +51,7 @@ setTimeout(function() {
                 <!-- <label for="menu_btn" class="menu_btn" ><i class="fa-regular fa-circle-left"></i></label> -->
                 <div class="list2">
                     <li class="list_item">
-                        <a href="#">
+                        <a href="./contact.php">
                             <i class="fa-brands fa-telegram"></i>
                             Contact
                         </a>
