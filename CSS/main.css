@@ -296,6 +296,14 @@
     display: none;
   }
 }
+.info-text h3 {
+  padding: 15px;
+}
+
+ul {
+  padding: 10px;
+}
+
 * {
   margin: 0;
   padding: 0;
