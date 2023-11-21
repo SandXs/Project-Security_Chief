@@ -50,17 +50,3 @@ if (isset($_POST['signin'])) {
     </div>
   </form>
 </div>
-<script>
-    // function validator() {
-    //  onclick="validator()"
-    //     var email_input = $("input[name='email']").val();
-    //     var password_input = $("input[name='password']").val();
-        
-    //     $.post("",
-    //     { 
-    //       email: "archies559@gmail.com",
-    //       password: "abc1234",
-    //       signin_check: true
-    //     });
-    // }
-</script>

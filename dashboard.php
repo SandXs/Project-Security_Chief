@@ -25,9 +25,39 @@ if (!isset($_SESSION['id'])) {         // condition Check: if session is not set
           <td>Response</td>
         </tr>
       </thead>
+      <tbody>
       <?php
-      Get_all_tickets();
+      //Get_all_tickets();
+      $rows = Get_all_tickets();
+      //print_r($rows[1]);
+      // for ($i = 1; $i < count($rows); $i++) {
+      //   echo'
+      //     <tr>
+      //       <td>'. $rows[$i]['ticket_id'] .'</td>
+      //       <td>'. $rows[$i]['ticket_priority'] .'</td>
+      //       <td>'. $rows[$i]['ticket_type'] .'</td>
+      //       <td>'. $rows[$i]['ticket_subject'] .'</td>
+      //       <td>'. $rows[$i]['ticket_content'] .'</td>
+      //       <td>'. $rows[$i]['ticket_email'] .'</td>
+      //       <td>'. (isset($rows[$i]['ticket_response'])) ? $rows[$i]['ticket_response'] : "" .'</td>
+      //     </tr>
+      //   ';
+      // }
+      // foreach ($rows as $row) {
+      //   echo'
+      //     <tr>
+      //       <td>'. $row['ticket_id'] .'</td>
+      //       <td>'. $row['ticket_priority'] .'</td>
+      //       <td>'. $row['ticket_type'] .'</td>
+      //       <td>'. $row['ticket_subject'] .'</td>
+      //       <td>'. $row['ticket_content'] .'</td>
+      //       <td>'. $row['ticket_email'] .'</td>
+      //       <td>'. (isset($row['ticket_response'])) ? $row['ticket_response'] : "" .'</td>
+      //     </tr>
+      //   ';
+      // }
       ?>
+      </tbody>
     </table>
     <form action="" method="post">
       <button type="submit" name='signout' class=" btn btn-warning mb-3"> Sign Out</button>
@@ -72,7 +102,7 @@ if (!isset($_SESSION['id'])) {         // condition Check: if session is not set
       </div>
       <div>
         <label for="ticket_content"><b>Content</b></label>
-        <text placeholder="Enter Content" name="ticket_content" required>
+        <textarea placeholder="Enter Content" name="ticket_content" required></textarea>
       </div>
       <button type="submit" name="create_ticket" class="btn">Send</button>
       <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
@@ -110,32 +140,37 @@ function Get_user_info ($con){
 }
 function Get_all_tickets(){
   $con = connectdb();
-  $user = Get_user_info($con);
-  if($user['user_is_admin'] == 1){
+  //$user = Get_user_info($con);
+  // if($user['user_is_admin'] == 1){
+    $rows[] = array();
     $query = 'SELECT * FROM tickets';
     $result = mysqli_query($con, $query);
-    $row = mysqli_fetch_array($result);
-  } else {
-    $query = 'SELECT * FROM tickets WHERE ticket_email = "'.$user['user_email'].'"';
-    $result = mysqli_query($con, $query);
-    $row = mysqli_fetch_array($result);
-  }
-  $html = "<tbody>";
-  while(isset($row)){
-    $html .= '
-      <tr>
-        <td>'. $row['ticket_id'] .'</td>
-        <td>'. $row['ticket_priority'] .'</td>
-        <td>'. $row['ticket_type'] .'</td>
-        <td>'. $row['ticket_subject'] .'</td>
-        <td>'. $row['ticket_content'] .'</td>
-        <td>'. $row['ticket_email'] .'</td>
-        <td>'. (isset($row['ticket_response'])) ? $row['ticket_response'] : "" .'</td>
-      </tr>
-    ';
-  }
-  $html .= "<tbody/>";
-  echo $html;
+    while($row = mysqli_fetch_array($result)) {
+      $rows[] = $row;
+    }
+    //$result = $result->fetch_assoc();
+    //$row = mysqli_fetch_array($result);
+  // } else {
+  //   $query = 'SELECT * FROM tickets WHERE ticket_email = "'.$user['user_email'].'"';
+  //   $result = mysqli_query($con, $query);
+  // }
+  return $rows;
+  // $html = '<tbody>';
+  // while(isset($row)){
+  //   $html .= '
+  //     <tr>
+  //       <td>'. $row['ticket_id'] .'</td>
+  //       <td>'. $row['ticket_priority'] .'</td>
+  //       <td>'. $row['ticket_type'] .'</td>
+  //       <td>'. $row['ticket_subject'] .'</td>
+  //       <td>'. $row['ticket_content'] .'</td>
+  //       <td>'. $row['ticket_email'] .'</td>
+  //       <td>'. (isset($row['ticket_response'])) ? $row['ticket_response'] : "" .'</td>
+  //     </tr>
+  //   ';
+  // }
+  // $html .= '<tbody/>';
+  // return $html;
 }
 
 ?>
