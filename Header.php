@@ -42,11 +42,11 @@ setTimeout(function() {
                             Info
                         </a>
                     </li>
-                    <li class="list_item">
+                    <!-- <li class="list_item">
                         <a href="#"><i class="fa-solid fa-newspaper"></i>
                             Nieuws
                         </a>
-                    </li>
+                    </li> -->
                 </div>
                 <!-- <label for="menu_btn" class="menu_btn" ><i class="fa-regular fa-circle-left"></i></label> -->
                 <div class="list2">
@@ -57,7 +57,7 @@ setTimeout(function() {
                         </a>
                     </li>
                     <li class="list_item">
-                        <a href="#"><i class="fa-solid fa-right-to-bracket"></i>
+                        <a href="./Login.php"><i class="fa-solid fa-right-to-bracket"></i>
                             Login</a>
                     </li>
                 </div>

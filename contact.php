@@ -10,7 +10,7 @@ include './Header.php';
 // }, 5000);
 </script>
     <section class="contact-container">
-        <div class="form_container">
+        <div class="form_container contact_form">
             <h1>Contact ons voor meer nieuws en betere beveiliging </h1>
                 <form action="">
                     <div class="from_input">
@@ -23,12 +23,15 @@ include './Header.php';
                         </select>
                         <input type="text" name="Full name" id="fullName" placeholder="Voor-AchterNaam">
                         <input type="text" name="companyName" id="companyName" placeholder="Bedrijf naam">
-                        <input type="number" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==10) return false;" name="Nummber" id="Nummber" placeholder="Telefoon nummer">
+                        <!-- <input type="number" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==10) return false;" name="Nummber" id="Nummber" placeholder="Telefoon nummer"> -->
                     </div>
                     <div class="description_input">
-                        <textarea name="omschrijving" id="omschrijving" cols="50" rows="5" placeholder="Omschrijving..."></textarea>
+                        <textarea name="omschrijving" id="omschrijving" cols="40" rows="5" placeholder="Omschrijving..."></textarea>
                     </div>
                 </form>
+                <div class="submit_btn">
+                        <button type="submit">Versturen</button>
+                    </div>
         </div>
     </section>
 </body>

@@ -28,7 +28,7 @@ setTimeout(function() {
 
                     <div class="contact_wrap">
                         <p class="intro-contact">Heb je geen account en wil je mee doen dan!! </p>
-                        <button typ="button" class="intro_btn"><a href="" class="bg-rotate">Contact us</a></button>
+                        <button typ="button" class="intro_btn"><a href="./contact.php" class="bg-rotate">Contact us</a></button>
                     </div>
 
                 </div>
