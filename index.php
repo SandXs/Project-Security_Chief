@@ -22,9 +22,8 @@ setTimeout(function() {
             <div class="intro-container">
                 <div class="intro-text">
                     <h1>Doe mee en word lid van Security chief </h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Maecenas et iaculis risus. Integer rhoncus, ipsum at congue commodo,
-                        purus velit viverra massa, </p>
+                    <p>Wij zijn security chief. Wij proberen u het beste te beschermen tegen cybercrime. 
+                        Wordt u ook lid van Security Chief?</p>
 
                     <div class="contact_wrap">
                         <p class="intro-contact">Heb je geen account en wil je mee doen dan!! </p>
@@ -80,7 +79,7 @@ setTimeout(function() {
 
                 <div class="info-wraper">
                 <div class="info-foto-container">
-                    <img src="./img/scam.jpg" alt="">
+                    <img src="./img/malware.jpg" alt="">
                 </div>
                 <div class="info-text">
                     <h1> Malware </h1>
@@ -99,7 +98,7 @@ setTimeout(function() {
 
                 <div class="info-wraper">
                 <div class="info-foto-container">
-                    <img src="./img/scam.jpg" alt="">
+                    <img src="./img/hacking.jpg" alt="">
                 </div>
                 <div class="info-text">
                     <h1> Hacking </h1>
@@ -118,7 +117,7 @@ setTimeout(function() {
                 
                 <div class="info-wraper">
                 <div class="info-foto-container">
-                    <img src="./img/scam.jpg" alt="">
+                    <img src="./img/ransomware.jpg" alt="">
                 </div>
                 <div class="info-text">
                     <h1> Ransomware </h1>
@@ -138,7 +137,7 @@ setTimeout(function() {
                 
                 <div class="info-wraper">
                 <div class="info-foto-container">
-                    <img src="./img/scam.jpg" alt="">
+                    <img src="./img/ddos.jpg" alt="">
                 </div>
                 <div class="info-text">
                     <h1> DDoS aanvallen </h1>
@@ -157,7 +156,7 @@ setTimeout(function() {
                 
                 <div class="info-wraper">
                 <div class="info-foto-container">
-                    <img src="./img/scam.jpg" alt="">
+                    <img src="./img/spoofing.jpg" alt="">
                 </div>
                 <div class="info-text">
                     <h1> Spoofing </h1>
@@ -176,7 +175,7 @@ setTimeout(function() {
                 </div>
 
                 <div class="info-foto-container">
-                    <img src="./img/scam.jpg" alt="">
+                    <img src="./img/id.jpg" alt="">
                 </div>
 
                 <div class="info-text">
@@ -195,7 +194,7 @@ setTimeout(function() {
                 </div>
                 
                 <div class="info-foto-container">
-                    <img src="./img/scam.jpg" alt="">
+                    <img src="./img/crypto.jpg" alt="">
                 </div>
 
                 <div class="info-text">

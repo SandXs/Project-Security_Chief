@@ -18,9 +18,8 @@ setTimeout(function() {
             <div class="intro-container">
                 <div class="intro-text">
                     <h1>Doe mee en word lid van Security chief </h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Maecenas et iaculis risus. Integer rhoncus, ipsum at congue commodo,
-                        purus velit viverra massa, </p>
+                    <p>Wij zijn security chief. Wij proberen u het beste te beschermen tegen cybercrime. 
+                        Wordt u ook lid van Security Chief? </p>
 
                     <div class="contact_wrap">
                         <p class="intro-contact">Heb je geen account en wil je mee doen dan!! </p>
@@ -95,7 +94,7 @@ setTimeout(function() {
                 <div class="intro-info-container">
             <div class="info-wraper">
                 <div class="info-foto-container">
-                    <img src="./img/spear-phishing.jpeg" alt="">
+                    <img src="./img/malware.jpg" alt="">
                 </div>
                 <div class="info-text">
                     <h1> Malware </h1>
