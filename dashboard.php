@@ -12,10 +12,12 @@ $user = Get_user_info();
     <h1 class=" mt-3 text-center">Welcome, this is your dashboard!! </h1>
     <!-- A button to open the popup form -->
     <button class="open-button" onclick="openForm()">Create ticket</button>
+    <button class="open-button" onclick="delTicket()">Delete</button>
     <h2><?php echo (($GLOBALS['user']['user_is_admin'] == 1) ? "All active tickets" : "My tickets");  ?></h2>
     <table id="ticketlist" class="table table-striped table-bordered table-hover">
       <thead class="table-dark">
         <tr>
+          <td></td>
           <td>ID</td>
           <td>Priority</td>
           <td>Type</td>
@@ -23,7 +25,6 @@ $user = Get_user_info();
           <td>Content</td>
           <td>Email</td>
           <td>Response</td>
-          <td></td>
         </tr>
       </thead>
       <tbody>
@@ -95,10 +96,13 @@ $user = Get_user_info();
   }
 
   //delete ticket
-  $('#ticketlist').on('click','tbody tr div#del_ticket', function(){
-    var ticket_id = $(this).find('tr').data('ticket_id');
-    console.log(ticket_id);
-  });
+  function delTicket(){
+    // var ticket_id = $(this).find('tr').data('ticket_id');
+    // console.log(ticket_id);
+    $("input:checkbox[name=type]:checked").each(function(){
+
+    });
+  };
 
   //edit ticket
   $('#ticketlist').on('click','tbody tr', function(){
@@ -152,6 +156,7 @@ function Get_all_tickets(){
   while($row = mysqli_fetch_array($result)){
     $html .= '
       <tr class="clickable-row" data-ticket_id="'. $row['ticket_id'] .'">
+        <td><input type="checkbox" id="del_ticket"></td>
         <td>'. $row['ticket_id'] .'</td>
         <td>'. $row['ticket_priority'] .'</td>
         <td>'. $row['ticket_type'] .'</td>
@@ -159,7 +164,6 @@ function Get_all_tickets(){
         <td>'. $row['ticket_content'] .'</td>
         <td>'. $row['ticket_email'] .'</td>
         <td>'. ((isset($row['ticket_response'])) ? $row['ticket_response'] : "") .'</td>
-        <td><div id="del_ticket">Delete</div></td>
       </tr>
     ';
   }
