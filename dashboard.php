@@ -28,9 +28,6 @@ $user = Get_user_info();
         </tr>
       </thead>
       <tbody>
-      <?php
-      echo Get_all_tickets();
-      ?>
       </tbody>
     </table>
     <form action="" method="post">
@@ -87,6 +84,11 @@ $user = Get_user_info();
   </div>
 <body>
 <script>
+  //loadTickets();
+  $(document).ready(function() {
+    loadTickets();
+  });
+  
   function closeForm() {
     document.getElementById("myForm").style.display = "none";
   }
@@ -95,19 +97,33 @@ $user = Get_user_info();
     document.getElementById("myForm").style.display = "block";
   }
 
+  function loadTickets() {
+    $.post('',{ 
+      load_Tickets: '1'},function(data, status, xhr) {
+        
+        $('p').append('status: ' + status + ', data: ' + data);
+
+    }).done(function(data) { console.log(data); });
+  }
+  //$('#ticketlist tbody').html
   //delete ticket
   function delTicket(){
-    // var ticket_id = $(this).find('tr').data('ticket_id');
-    // console.log(ticket_id);
-    $("input:checkbox[name=type]:checked").each(function(){
-
+    var ticket_ids = [];
+    $("tbody tr input:checkbox").each(function(){
+      var isChecked = $(this);
+      if(isChecked.is(":checked")){
+        ticket_ids.push(isChecked.attr("id"));
+      }
     });
+    $.post('',{ 
+      delTicket: '1',
+      ticket_id: ticket_ids 
+    }).done(function() {  });
   };
 
   //edit ticket
   $('#ticketlist').on('click','tbody tr', function(){
     var ticket_id = $(this).data('ticket_id');
-    console.log(ticket_id);
   });
 </script>
 
@@ -123,12 +139,11 @@ if (isset($_POST['create_ticket'])) {
     ticket_del = 0';
   mysqli_query($con, $query);
   echo"<script>closeForm()</script>";
-  Get_all_tickets();
 }
 
 if (isset($_POST['del_ticket'])) {
   $con = connectdb();
-  $query = 'UPDATE tickets SET ticket_del = 0 WHERE ticket_id = 0 AND ticket_email = '.$GLOBALS['user']['user_email'];
+  $query = 'UPDATE tickets SET ticket_del = 0 WHERE ticket_id in ('.$_POST['ticket_id'].') AND ticket_email = '.$GLOBALS['user']['user_email'];
   mysqli_query($con, $query);
 }
 
@@ -143,7 +158,7 @@ function Get_user_info (){
   $row = mysqli_fetch_array($result);
   return $row;
 }
-function Get_all_tickets(){
+if (isset($_POST['load_Tickets'])) {
   $con = connectdb();
   if($GLOBALS['user']['user_is_admin'] == 1){
     $query = 'SELECT * FROM tickets WHERE ticket_del = 0';
@@ -152,11 +167,11 @@ function Get_all_tickets(){
     $query = 'SELECT * FROM tickets WHERE ticket_email = "'.$GLOBALS['user']['user_email'].'" AND ticket_del = 0';
     $result = mysqli_query($con, $query);
   }
-  $html = '<tbody>';
+  $html = '';
   while($row = mysqli_fetch_array($result)){
     $html .= '
       <tr class="clickable-row" data-ticket_id="'. $row['ticket_id'] .'">
-        <td><input type="checkbox" id="del_ticket"></td>
+        <td><input type="checkbox" id="'. $row['ticket_id'] .'"></td>
         <td>'. $row['ticket_id'] .'</td>
         <td>'. $row['ticket_priority'] .'</td>
         <td>'. $row['ticket_type'] .'</td>
@@ -167,7 +182,6 @@ function Get_all_tickets(){
       </tr>
     ';
   }
-  $html .= '<tbody/>';
   return $html;
 }
 
