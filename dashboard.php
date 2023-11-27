@@ -118,8 +118,15 @@ $user = Get_user_info($_SESSION['id']);
     $.post('functions/functionsTickets.php',{ 
       del_ticket: '1',
       ticket_id: ticket_ids 
-    }).done(function(data) { loadTickets(); console.log(data); });
+    }).done(function(data) { loadTickets();});
   };
+
+  function createTicket(){
+    $.post('functions/functionsTickets.php',{ 
+      create_ticket: '1',
+      ticket_subject: $()
+    }).done(function(data) { closeForm(); loadTickets();});
+  }
 
   //edit ticket
   $('#ticketlist').on('click','tbody tr', function(){
@@ -128,18 +135,18 @@ $user = Get_user_info($_SESSION['id']);
 </script>
 
 <?php
-if (isset($_POST['create_ticket'])) {
-  $con = connectdb();
-  $query = 'INSERT INTO tickets SET 
-    ticket_email = "'.test_input($con,((isset($_POST['ticket_email']))?$_POST['ticket_email']:$GLOBALS['user']['user_email'])).'",
-    ticket_subject = "'.test_input($con,$_POST['ticket_subject']).'",
-    ticket_type = '.intval(test_input($con,$_POST['ticket_type'])).',
-    ticket_content = "'.test_input($con,$_POST['ticket_content']).'",
-    ticket_priority = '.intval(test_input($con,$_POST['ticket_priority'])).',
-    ticket_del = 0';
-  mysqli_query($con, $query);
-  echo"<script>closeForm()</script>";
-}
+// if (isset($_POST['create_ticket'])) {
+//   $con = connectdb();
+//   $query = 'INSERT INTO tickets SET 
+//     ticket_email = "'.test_input($con,((isset($_POST['ticket_email']))?$_POST['ticket_email']:$GLOBALS['user']['user_email'])).'",
+//     ticket_subject = "'.test_input($con,$_POST['ticket_subject']).'",
+//     ticket_type = '.intval(test_input($con,$_POST['ticket_type'])).',
+//     ticket_content = "'.test_input($con,$_POST['ticket_content']).'",
+//     ticket_priority = '.intval(test_input($con,$_POST['ticket_priority'])).',
+//     ticket_del = 0';
+//   mysqli_query($con, $query);
+//   echo"<script>closeForm()</script>";
+// }
 
 if (isset($_POST['signout'])) {
   session_destroy();            //  destroys session 

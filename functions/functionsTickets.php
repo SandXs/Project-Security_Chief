@@ -30,6 +30,19 @@ if (isset($_POST['load_Tickets'])) {
     echo $ticket_row;
 }
 
+if (isset($_POST['create_ticket'])) {
+    $con = connectdb();
+    $query = 'INSERT INTO tickets SET 
+        ticket_email = "'.test_input($con,((isset($_POST['ticket_email']))?$_POST['ticket_email']:$GLOBALS['user']['user_email'])).'",
+        ticket_subject = "'.test_input($con,$_POST['ticket_subject']).'",
+        ticket_type = '.intval(test_input($con,$_POST['ticket_type'])).',
+        ticket_content = "'.test_input($con,$_POST['ticket_content']).'",
+        ticket_priority = '.intval(test_input($con,$_POST['ticket_priority'])).',
+        ticket_del = 0';
+    mysqli_query($con, $query);
+    echo"<script>closeForm()</script>";
+}
+
 if (isset($_POST['del_ticket'])) {
     $con = connectdb();
     $query = 'UPDATE tickets SET ticket_del = 1 WHERE ticket_id IN ('.implode(",",$_POST['ticket_id']).')';
