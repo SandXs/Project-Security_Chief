@@ -17,7 +17,7 @@ $user = Get_user_info($_SESSION['id']);
     <table id="ticketlist" class="table table-striped table-bordered table-hover">
       <thead class="table-dark">
         <tr>
-          <td></td>
+          <td><?php (($GLOBALS['user']['user_is_admin'] == 1) ? "<input type='checkbox' id='checkAll'>" : "My tickets");  ?></td>
           <td>ID</td>
           <td>Priority</td>
           <td>Type</td>
@@ -36,7 +36,7 @@ $user = Get_user_info($_SESSION['id']);
   </div>
 
   <!-- The form -->
-  <div class="form-popup" id="myForm">
+  <div class="form-popup" id="Ticket_Create_Dialog">
     <form method="post" class="form-container">
       <h1>Create ticket</h1>
       <?php
@@ -78,28 +78,27 @@ $user = Get_user_info($_SESSION['id']);
         <label for="ticket_content"><b>Content</b></label>
         <textarea placeholder="Enter Content" name="ticket_content" required></textarea>
       </div>
-      <button type="submit" name="create_ticket" class="btn">Send</button>
+      <button type="submit" onclick="createTicket()" class="btn">Send</button>
       <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
     </form>
   </div>
 <body>
 <script>
-  //loadTickets();
   $(document).ready(function() {
     loadTickets();
   });
   
   function closeForm() {
-    document.getElementById("myForm").style.display = "none";
+    document.getElementById("Ticket_Create_Dialog").style.display = "none";
   }
 
   function openForm() {
-    document.getElementById("myForm").style.display = "block";
+    document.getElementById("Ticket_Create_Dialog").style.display = "block";
   }
 
   function loadTickets() {
-    $.post('functions/functionsTickets.php',{ 
-      load_Tickets: '1'
+    $.post('functions/dashboard_functions.php',{ 
+      view: 'load_Tickets'
     }).done(function(data){
       $("#ticketlist tbody").empty();
       $("#ticketlist tbody").last().append( data );
@@ -115,75 +114,44 @@ $user = Get_user_info($_SESSION['id']);
         ticket_ids.push(isChecked.attr("id"));
       }
     });
-    $.post('functions/functionsTickets.php',{ 
-      del_ticket: '1',
+    $.post('functions/dashboard_functions.php',{ 
+      view: 'del_ticket',
       ticket_id: ticket_ids 
     }).done(function(data) { loadTickets();});
   };
 
   function createTicket(){
-    $.post('functions/functionsTickets.php',{ 
-      create_ticket: '1',
-      ticket_subject: $()
-    }).done(function(data) { closeForm(); loadTickets();});
+    $.post('functions/dashboard_functions.php',{ 
+      view: 'create_ticket',
+      ticket_subject: $("#Ticket_Create_Dialog input[name='ticket_subject']").val(),
+      ticket_type: $("#Ticket_Create_Dialog select[name='ticket_type']").val(),
+      ticket_email: $("#Ticket_Create_Dialog input[name='ticket_email']").val(),
+      ticket_priority: $("#Ticket_Create_Dialog select[name='ticket_priority']").val(),
+      ticket_content: $("#Ticket_Create_Dialog textarea[name='ticket_content']").val()
+    }).done(function(data) {
+      closeForm();
+      loadTickets();
+      $("#Ticket_Create_Dialog input[name='ticket_subject']").val("");
+      $("#Ticket_Create_Dialog select[name='ticket_type']").val("");
+      $("#Ticket_Create_Dialog input[name='ticket_email']").val("");
+      $("#Ticket_Create_Dialog select[name='ticket_priority']").val("");
+      $("#Ticket_Create_Dialog textarea[name='ticket_content']").val("");
+    });
   }
 
   //edit ticket
   $('#ticketlist').on('click','tbody tr', function(){
     var ticket_id = $(this).data('ticket_id');
   });
+
+  $("#checkAll").click(function () {
+    $('input:checkbox').not(this).prop('checked', this.checked);
+  });
 </script>
 
 <?php
-// if (isset($_POST['create_ticket'])) {
-//   $con = connectdb();
-//   $query = 'INSERT INTO tickets SET 
-//     ticket_email = "'.test_input($con,((isset($_POST['ticket_email']))?$_POST['ticket_email']:$GLOBALS['user']['user_email'])).'",
-//     ticket_subject = "'.test_input($con,$_POST['ticket_subject']).'",
-//     ticket_type = '.intval(test_input($con,$_POST['ticket_type'])).',
-//     ticket_content = "'.test_input($con,$_POST['ticket_content']).'",
-//     ticket_priority = '.intval(test_input($con,$_POST['ticket_priority'])).',
-//     ticket_del = 0';
-//   mysqli_query($con, $query);
-//   echo"<script>closeForm()</script>";
-// }
-
 if (isset($_POST['signout'])) {
   session_destroy();            //  destroys session 
   header('location: index.php');
 }
-// function Get_user_info (){
-//   $con = connectdb();
-//   $query = 'SELECT * FROM users WHERE user_id = "'.$_SESSION['id'].'"';
-//   $result = mysqli_query($con, $query);
-//   $row = mysqli_fetch_array($result);
-//   return $row;
-// }
-// if (isset($_POST['load_Tickets'])) {
-//   $con = connectdb();
-//   if($GLOBALS['user']['user_is_admin'] == 1){
-//     $query = 'SELECT * FROM tickets WHERE ticket_del = 0';
-//     $result = mysqli_query($con, $query);
-//   } else {
-//     $query = 'SELECT * FROM tickets WHERE ticket_email = "'.$GLOBALS['user']['user_email'].'" AND ticket_del = 0';
-//     $result = mysqli_query($con, $query);
-//   }
-//   $ticket_row = '';
-//   while($row = mysqli_fetch_array($result)){
-//     $ticket_row .= '
-//       <tr class="clickable-row" data-ticket_id="'. $row['ticket_id'] .'">
-//         <td><input type="checkbox" id="'. $row['ticket_id'] .'"></td>
-//         <td>'. $row['ticket_id'] .'</td>
-//         <td>'. $row['ticket_priority'] .'</td>
-//         <td>'. $row['ticket_type'] .'</td>
-//         <td>'. $row['ticket_subject'] .'</td>
-//         <td>'. $row['ticket_content'] .'</td>
-//         <td>'. $row['ticket_email'] .'</td>
-//         <td>'. ((isset($row['ticket_response'])) ? $row['ticket_response'] : "") .'</td>
-//       </tr>
-//     ';
-//   }
-//   echo $ticket_row;
-// }
-
 ?>

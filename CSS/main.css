@@ -17,7 +17,7 @@
 
 /* Dashboard */
 /* The popup form - hidden by default */
-#myForm {
+#Ticket_Create_Dialog {
   display: none;
   position: absolute;
   z-index: 999;
