@@ -5,7 +5,7 @@ if (!isset($_SESSION['id'])) {         // condition Check: if session is not set
   header('location: login.php');   // if not set the user is sendback to login page.
 }
 
-$user = Get_user_info();
+$user = Get_user_info($_SESSION['id']);
 ?>
 <body>
   <div class="container col-12 border rounded mt-3" style="z-index: 0;position:absolute;">
@@ -98,14 +98,14 @@ $user = Get_user_info();
   }
 
   function loadTickets() {
-    $.post('',{ 
-      load_Tickets: '1'},function(data, status, xhr) {
-        
-        $('p').append('status: ' + status + ', data: ' + data);
-
-    }).done(function(data) { console.log(data); });
+    $.post('functions/functionsTickets.php',{ 
+      load_Tickets: '1'
+    }).done(function(data){
+      $("#ticketlist tbody").empty();
+      $("#ticketlist tbody").last().append( data );
+    });
   }
-  //$('#ticketlist tbody').html
+
   //delete ticket
   function delTicket(){
     var ticket_ids = [];
@@ -115,10 +115,10 @@ $user = Get_user_info();
         ticket_ids.push(isChecked.attr("id"));
       }
     });
-    $.post('',{ 
-      delTicket: '1',
+    $.post('functions/functionsTickets.php',{ 
+      del_ticket: '1',
       ticket_id: ticket_ids 
-    }).done(function() {  });
+    }).done(function(data) { loadTickets(); console.log(data); });
   };
 
   //edit ticket
@@ -141,48 +141,42 @@ if (isset($_POST['create_ticket'])) {
   echo"<script>closeForm()</script>";
 }
 
-if (isset($_POST['del_ticket'])) {
-  $con = connectdb();
-  $query = 'UPDATE tickets SET ticket_del = 0 WHERE ticket_id in ('.$_POST['ticket_id'].') AND ticket_email = '.$GLOBALS['user']['user_email'];
-  mysqli_query($con, $query);
-}
-
 if (isset($_POST['signout'])) {
   session_destroy();            //  destroys session 
   header('location: index.php');
 }
-function Get_user_info (){
-  $con = connectdb();
-  $query = 'SELECT * FROM users WHERE user_id = "'.$_SESSION['id'].'"';
-  $result = mysqli_query($con, $query);
-  $row = mysqli_fetch_array($result);
-  return $row;
-}
-if (isset($_POST['load_Tickets'])) {
-  $con = connectdb();
-  if($GLOBALS['user']['user_is_admin'] == 1){
-    $query = 'SELECT * FROM tickets WHERE ticket_del = 0';
-    $result = mysqli_query($con, $query);
-  } else {
-    $query = 'SELECT * FROM tickets WHERE ticket_email = "'.$GLOBALS['user']['user_email'].'" AND ticket_del = 0';
-    $result = mysqli_query($con, $query);
-  }
-  $html = '';
-  while($row = mysqli_fetch_array($result)){
-    $html .= '
-      <tr class="clickable-row" data-ticket_id="'. $row['ticket_id'] .'">
-        <td><input type="checkbox" id="'. $row['ticket_id'] .'"></td>
-        <td>'. $row['ticket_id'] .'</td>
-        <td>'. $row['ticket_priority'] .'</td>
-        <td>'. $row['ticket_type'] .'</td>
-        <td>'. $row['ticket_subject'] .'</td>
-        <td>'. $row['ticket_content'] .'</td>
-        <td>'. $row['ticket_email'] .'</td>
-        <td>'. ((isset($row['ticket_response'])) ? $row['ticket_response'] : "") .'</td>
-      </tr>
-    ';
-  }
-  return $html;
-}
+// function Get_user_info (){
+//   $con = connectdb();
+//   $query = 'SELECT * FROM users WHERE user_id = "'.$_SESSION['id'].'"';
+//   $result = mysqli_query($con, $query);
+//   $row = mysqli_fetch_array($result);
+//   return $row;
+// }
+// if (isset($_POST['load_Tickets'])) {
+//   $con = connectdb();
+//   if($GLOBALS['user']['user_is_admin'] == 1){
+//     $query = 'SELECT * FROM tickets WHERE ticket_del = 0';
+//     $result = mysqli_query($con, $query);
+//   } else {
+//     $query = 'SELECT * FROM tickets WHERE ticket_email = "'.$GLOBALS['user']['user_email'].'" AND ticket_del = 0';
+//     $result = mysqli_query($con, $query);
+//   }
+//   $ticket_row = '';
+//   while($row = mysqli_fetch_array($result)){
+//     $ticket_row .= '
+//       <tr class="clickable-row" data-ticket_id="'. $row['ticket_id'] .'">
+//         <td><input type="checkbox" id="'. $row['ticket_id'] .'"></td>
+//         <td>'. $row['ticket_id'] .'</td>
+//         <td>'. $row['ticket_priority'] .'</td>
+//         <td>'. $row['ticket_type'] .'</td>
+//         <td>'. $row['ticket_subject'] .'</td>
+//         <td>'. $row['ticket_content'] .'</td>
+//         <td>'. $row['ticket_email'] .'</td>
+//         <td>'. ((isset($row['ticket_response'])) ? $row['ticket_response'] : "") .'</td>
+//       </tr>
+//     ';
+//   }
+//   echo $ticket_row;
+// }
 
 ?>
