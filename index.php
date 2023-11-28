@@ -48,10 +48,10 @@ setTimeout(function() {
                         andere persoonlijke gegevens van jou te achterhalen. 
                    
                     <h3>Hoe kan ik het voorkomen?</h3>
-                   <ol>
-                    <ul>• Reageer niet op het bericht.</ul>
-                  	<ul>• Meld de phishing bij Fraudehelpdesk </ul>
-                      </ol>
+                   <ul>
+                    <li> Reageer niet op het bericht.</li>
+                  	<li> Meld de phishing bij Fraudehelpdesk </li>
+                      </ul>
                   
                     </p>
                     <button typ="button" class="readBtn-wraper"><a href="#" class="read-btn">Read more</a></button>
@@ -68,29 +68,29 @@ setTimeout(function() {
                         maar ontvangt nooit een betaling. In beide gevallen bent u waarschijnlijk opgelicht. 
                    
                     <h3>Hoe kan ik het voorkomen?</h3>
-                   <ol>
-                    <ul>• Doe onderzoek naar de persoon of naar het bedrijf van waar je het koopt.</ul>
-                  	<ul>• Als je het niet vertrouwd koop het niet. </ul>
-                      </ol>
+                   <ul>
+                    <li>Doe onderzoek naar de persoon of naar het bedrijf van waar je het koopt.</li>
+                  	<li>Als je het niet vertrouwd koop het niet. </li>
+                      </ul>
                   
                     </p>
                     <button typ="button" class="readBtn-wraper"><a href="#" class="read-btn">Read more</a></button>
                 </div>
 
                 <div class="info-wraper">
-                <div class="info-foto-container">
+                 <div class="info-foto-container">
                     <img src="./img/malware.jpg" alt="">
-                </div>
+                 </div>
                 <div class="info-text">
                     <h1> Malware </h1>
                     <p>Malware kan computers en apparaten op verschillende manieren infecteren en bestaat in verschillende vormen, 
                         zoals virussen, wormen, trojans en spyware. 
                    
                     <h3>Hoe kan ik het voorkomen?</h3>
-                   <ol>
-                    <ul>• Wees op je hoeden.</ul>
-                  	<ul>• Gebruik Beveiligingssoftware. </ul>
-                      </ol>
+                   <ul>
+                    <li>Wees op je hoeden.</li>
+                  	<li>Gebruik Beveiligingssoftware. </li>
+                      </ul>
                   
                     </p>
                     <button typ="button" class="readBtn-wraper"><a href="#" class="read-btn">Read more</a></button>
@@ -106,10 +106,10 @@ setTimeout(function() {
                         computers en het netwerk. Het is strafbaar als dit gebeurt zonder toestemming van de eigenaar van die gegevens.
                    
                     <h3>Hoe kan ik het voorkomen?</h3>
-                   <ol>
-                    <ul>•Gebruik sterke wachtwoorden</ul>
-                  	<ul>•Vermijd dubieuze websites </ul>
-                      </ol>
+                   <ul>
+                    <li>Gebruik sterke wachtwoorden</li>
+                  	<li>Vermijd dubieuze websites </li>
+                      </ul>
                   
                     </p>
                     <button typ="button" class="readBtn-wraper"><a href="#" class="read-btn">Read more</a></button>
@@ -126,10 +126,10 @@ setTimeout(function() {
                        door ook systeembestanden te versleutelen die essentieel zijn voor de goede werking van het systeem. 
                    
                     <h3>Hoe kan ik het voorkomen?</h3>
-                   <ol>
-                    <ul>•Maak regelmatig back-ups </ul>
-                  	<ul>•Update je software </ul>
-                      </ol>
+                  <ul>
+                    <li>Maak regelmatig back-ups </li>
+                  	<li>Update je software </li>
+                      </ul>
                   
                     </p>
                     <button typ="button" class="readBtn-wraper"><a href="#" class="read-btn">Read more</a></button>
@@ -145,14 +145,15 @@ setTimeout(function() {
                         verwerken dat hij het simpelweg niet meer aan kan. De websites zijn dan niet bereikbaar voor bezoekers.
                    
                     <h3>Hoe kan ik het voorkomen?</h3>
-                   <ol>
-                    <ul>•Wees er vroeg bij om web verkeer te controleren</ul>
-                  	<ul>•Meer bandbreedte verkrijgen </ul>
-                      </ol>
+                   <ul>
+                    <li>Wees er vroeg bij om web verkeer te controleren</li>
+                  	<li>Meer bandbreedte verkrijgen </li>
+                      </ul>
                   
                     </p>
                     <button typ="button" class="readBtn-wraper"><a href="#" class="read-btn">Read more</a></button>
                 </div>
+            </div>
                 
                 <div class="info-wraper">
                 <div class="info-foto-container">
@@ -165,15 +166,16 @@ setTimeout(function() {
                         plaatsen of je direct geld afhandig te maken.
                    
                     <h3>Hoe kan ik het voorkomen?</h3>
-                   <ol>
-                    <ul>•Stel een google alert in.</ul>
-                  	<ul>•Voorkom email spoofing </ul>
-                      </ol>
+                   <ul>
+                    <li>Stel een google alert in.</li>
+                  	<li>Voorkom email spoofing </li>
+                      </ul>
                   
                     </p>
                     <button typ="button" class="readBtn-wraper"><a href="#" class="read-btn">Read more</a></button>
                 </div>
-
+            </div>
+            <div class="info-wraper">
                 <div class="info-foto-container">
                     <img src="./img/id.jpg" alt="">
                 </div>
@@ -184,15 +186,16 @@ setTimeout(function() {
                          diensten besteld, uitkeringen of creditcards aangevraagd, betalingen gedaan of bankrekeningen geopend.  
                    
                     <h3>Hoe kan ik het voorkomen?</h3>
-                   <ol>
-                    <ul>•Beveilig je computer</ul>
-                  	<ul>•Gebruik sterke wachtwoorden </ul>
-                      </ol>
+                   <ul>
+                    <li>Beveilig je computer</li>
+                  	<li>Gebruik sterke wachtwoorden </li>
+                      </ul>
                   
                     </p>
                     <button typ="button" class="readBtn-wraper"><a href="#" class="read-btn">Read more</a></button>
                 </div>
-                
+            </div>
+                <div class="info-wraper">
                 <div class="info-foto-container">
                     <img src="./img/crypto.jpg" alt="">
                 </div>
@@ -203,19 +206,19 @@ setTimeout(function() {
                         handen te krijgen. Ze besmetten de netwerken en apparaten dan bijvoorbeeld met malware.
                      
                     <h3>Hoe kan ik het voorkomen?</h3>
-                   <ol>
-                    <ul>•Blokkeer javascript in je browser.</ul>
-                  	<ul>•Gebruik goede antimalware </ul>
-                      </ol>
+                   <ul>
+                    <li>Blokkeer javascript in je browser.</li>
+                  	<li>Gebruik goede antimalware </li>
+                      </ul>
                   
                     </p>
                     <button typ="button" class="readBtn-wraper"><a href="#" class="read-btn">Read more</a></button>
                 </div>
                 
-                
-                
             </div>
+                
         </div>
+         
 
 
     </section>

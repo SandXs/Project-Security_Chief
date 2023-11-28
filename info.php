@@ -54,13 +54,14 @@ setTimeout(function() {
 
 
                     <h3>Hoe kan ik het voorkomen?</h3>
-                   <ol>
-                    <ul>• Reageer niet op het bericht.</ul>
-                  	<ul>• Meld de phishing bij Fraudehelpdesk </ul>
-                    <ul>•Meld de phishing bij de organisatie namens wie het valse bericht verstuurd werd. </ul>
-                    <ul>•	Klik nooit op een link of telefoonnummer als je twijfelt aan de echtheid van een bericht.
-                         Eerst checken dan klikken. </ul>
-                      </ol>
+                   <ul>
+                    <li>Reageer niet op het bericht.</li>
+                  	<li>Meld de phishing bij Fraudehelpdesk </li>
+                    <li>Meld de phishing bij de organisatie namens wie het valse bericht verstuurd werd. </li>
+                    <li>Klik nooit op een link of telefoonnummer als je twijfelt aan de echtheid van een bericht.
+                         Eerst checken dan klikken. </li>
+                        </ul>
+                      
                   
                     </p>
                     <button typ="button" class="readBtn-wraper"><a href="#" class="read-btn">Read more</a></button>
@@ -69,7 +70,7 @@ setTimeout(function() {
                 <div class="intro-info-container">
             <div class="info-wraper">
                 <div class="info-foto-container">
-                    <img src="./img/spear-phishing.jpeg" alt="">
+                    <img src="./img/scam.jpg" alt="">
                 </div>
                 <div class="info-text">
                     <h1> Scamming </h1>
@@ -80,12 +81,12 @@ setTimeout(function() {
                           Politie, Openbaar Ministerie, Marktplaats en banken werken samen aan het terugdringen van internetoplichting. 
 
                     <h3>Hoe kan ik het voorkomen?</h3>
-                   <ol>
-                    <ul>•Doe onderzoek naar de persoon of naar het bedrijf van waar je het koopt.</ul>
-                  	<ul>•Stuur nooit iets op voordat dit ook betaald is. </ul>
-                    <ul>•Als je het niet vertrouwd koop het niet</ul>
-                    <ul>•Betaal niet via een vreemde link. Betaal altijd via de instantie waar het verkocht wordt.</ul>
-                      </ol>
+                   <ul>
+                    <li>Doe onderzoek naar de persoon of naar het bedrijf van waar je het koopt.</li>
+                  	<li>Stuur nooit iets op voordat dit ook betaald is. </li>
+                    <li>Als je het niet vertrouwd koop het niet</li>
+                    <li>Betaal niet via een vreemde link. Betaal altijd via de instantie waar het verkocht wordt.</li>
+                      </ul>
                   
                     </p>
                     <button typ="button" class="readBtn-wraper"><a href="#" class="read-btn">Read more</a></button>
@@ -105,10 +106,10 @@ setTimeout(function() {
                         zich tegen alle vormen kunnen beschermen.
 
                     <h3>Hoe kan ik het voorkomen?</h3>
-                   <ol>
-                    <ul>• Gebruik beveiligingssoftware</ul>
-                  	<ul>• Wees op je hoede </ul>
-                    
+                   <ul>
+                    <li>Gebruik beveiligingssoftware</li>
+                  	<li>Wees op je hoede </li>
+                     </ul>
                   
                     </p>
                     <button typ="button" class="readBtn-wraper"><a href="#" class="read-btn">Read more</a></button>
@@ -117,7 +118,7 @@ setTimeout(function() {
                 <div class="intro-info-container">
             <div class="info-wraper">
                 <div class="info-foto-container">
-                    <img src="./img/spear-phishing.jpeg" alt="">
+                    <img src="./img/hacking.jpg" alt="">
                 </div>
                 <div class="info-text">
                     <h1> Hacking </h1>
@@ -133,14 +134,14 @@ setTimeout(function() {
 
 
                     <h3>Hoe kan ik het voorkomen?</h3>
-                   <ol>
-                    <ul>•Gebruik sterke wachtwoorden</ul>
-                  	<ul>•Meervoudige verificatie gebruiken </ul>
-                    <ul>•Wees waakzaam tegen phishing</ul>
-                    <ul>•Houd ani-virus software up to date.</ul>
-                    <ul>•Vermijd dubieuze websites</ul>
-                    <ul>•Gebruik geen openbare wifi</ul>
-                      </ol>
+                   <ul>
+                    <li>Gebruik sterke wachtwoorden</li>
+                  	<li>Meervoudige verificatie gebruiken </li>
+                    <li>Wees waakzaam tegen phishing</li>
+                    <li>Houd ani-virus software up to date.</li>
+                    <li>Vermijd dubieuze websites</li>
+                    <li>Gebruik geen openbare wifi</li>
+                      </ul>
                   
                     </p>
                     <button typ="button" class="readBtn-wraper"><a href="#" class="read-btn">Read more</a></button>
@@ -149,7 +150,7 @@ setTimeout(function() {
                 <div class="intro-info-container">
             <div class="info-wraper">
                 <div class="info-foto-container">
-                    <img src="./img/spear-phishing.jpeg" alt="">
+                    <img src="./img/ransomware.jpg" alt="">
                 </div>
                 <div class="info-text">
                     <h1> Ransomware</h1>
@@ -161,12 +162,12 @@ setTimeout(function() {
 
 
                     <h3>Hoe kan ik het voorkomen?</h3>
-                   <ol>
-                    <ul>•Maak regelmatig back-ups</ul>
-                  	<ul>•Installeer goed anti virus programma </ul>
-                    <ul>•Update je software  </ul>
+                   <ul>
+                    <li>Maak regelmatig back-ups</li>
+                  	<li>Installeer goed anti virus programma </li>
+                    <li>Update je software  </li>
                     
-                      </ol>
+                      </ul>
                   
                     </p>
                     <button typ="button" class="readBtn-wraper"><a href="#" class="read-btn">Read more</a></button>
@@ -175,7 +176,7 @@ setTimeout(function() {
                 <div class="intro-info-container">
             <div class="info-wraper">
                 <div class="info-foto-container">
-                    <img src="./img/spear-phishing.jpeg" alt="">
+                    <img src="./img/ddos.jpg" alt="">
                 </div>
                 <div class="info-text">
                     <h1> DDoS aanvallen </h1>
@@ -189,20 +190,20 @@ setTimeout(function() {
 
 
                     <h3>Hoe kan ik het voorkomen?</h3>
-                   <ol>
-                    <ul>•Wees er vroeg bij om web verkeer te controleren</ul>
-                  	<ul>•Meer bandbreedte verkrijgen</ul>
-                    <ul>•Gebruik een content distribution center (CDN)</ul>
+                   <ul>
+                    <li>Wees er vroeg bij om web verkeer te controleren</li>
+                  	<li>Meer bandbreedte verkrijgen</li>
+                    <li>Gebruik een content distribution center (CDN)</li>
                     
-                      </ol>
+                      </ul>
 
                       <h3>Wat te doen als ik doelwit ben van een aanval?</h3>
-                   <ol>
-                    <ul>•Zorg dat er defensieve maatregelen worden genomen</ul>
-                  	<ul>•Bel u hostingprovider </ul>
-                    <ul>•Schakel een specialist in.</ul>
+                   <ul>
+                    <li>Zorg dat er defensieve maatregelen worden genomen</li>
+                  	<li>Bel u hostingprovider </li>
+                    <li>Schakel een specialist in.</li>
                     
-                      </ol>
+                      </ul>
                   
                     </p>
                     <button typ="button" class="readBtn-wraper"><a href="#" class="read-btn">Read more</a></button>
@@ -211,7 +212,7 @@ setTimeout(function() {
                 <div class="intro-info-container">
             <div class="info-wraper">
                 <div class="info-foto-container">
-                    <img src="./img/spear-phishing.jpeg" alt="">
+                    <img src="./img/spoofing.jpg" alt="">
                 </div>
                 <div class="info-text">
                     <h1> Spoofing </h1>
@@ -222,10 +223,10 @@ setTimeout(function() {
 
 
                     <h3>Hoe kan ik het voorkomen?</h3>
-                   <ol>
-                    <ul>•Stel een google alert in.</ul>
-                  	<ul>•Voorkom email spoofing</ul>
-                    
+                   <ul>
+                    <li>Stel een google alert in.</li>
+                  	<li>Voorkom email spoofing</li>
+                     </ul>
                   
                     </p>
                     <button typ="button" class="readBtn-wraper"><a href="#" class="read-btn">Read more</a></button>
@@ -234,7 +235,7 @@ setTimeout(function() {
                 <div class="intro-info-container">
             <div class="info-wraper">
                 <div class="info-foto-container">
-                    <img src="./img/spear-phishing.jpeg" alt="">
+                    <img src="./img/id.jpg" alt="">
                 </div>
                 <div class="info-text">
                     <h1> Identiteitsfraude </h1>
@@ -244,14 +245,14 @@ setTimeout(function() {
 
 
                     <h3>Hoe kan ik het voorkomen?</h3>
-                   <ol>
-                    <ul>•Beveilig je computer</ul>
-                  	<ul>•Gebruik sterke wachtwoorden </ul>
-                    <ul>•Reageer nooit en phishing e-mails </ul>
-                    <ul>•Pas op met het weggeven van informatie over jezelf op het internet.</ul>
-                    <ul>•Ga niet in op telefoontjes waar informatie over jezelf gevraagd wordt</ul>
+                   <ul>
+                    <li>Beveilig je computer</li>
+                  	<li>Gebruik sterke wachtwoorden </li>
+                    <li>Reageer nooit en phishing e-mails </li>
+                    <li>Pas op met het weggeven van informatie over jezelf op het internet.</li>
+                    <li>Ga niet in op telefoontjes waar informatie over jezelf gevraagd wordt</li>
                     
-                      </ol>
+                      </ul>
                   
                     </p>
                     <button typ="button" class="readBtn-wraper"><a href="#" class="read-btn">Read more</a></button>
@@ -260,7 +261,7 @@ setTimeout(function() {
                 <div class="intro-info-container">
             <div class="info-wraper">
                 <div class="info-foto-container">
-                    <img src="./img/spear-phishing.jpeg" alt="">
+                    <img src="./img/crypto.jpg" alt="">
                 </div>
                 <div class="info-text">
                     <h1> Cryptojacking </h1>
@@ -270,48 +271,17 @@ setTimeout(function() {
 
 
                     <h3>Hoe kan ik het voorkomen?</h3>
-                   <ol>
-                    <ul>•Blokkeer javascript in je browser.</ul>
-                  	<ul>•Gebruik goede antimalware </ul>
-                    <ul>•Gebruik een adblocker of anti-cryptomining software  </ul>
+                   <ul>
+                    <li>Blokkeer javascript in je browser.</li>
+                  	<li>Gebruik goede antimalware </li>
+                    <li>Gebruik een adblocker of anti-cryptomining software  </li>
                   
-                      </ol>
-                  
-                    </p>
-                    <button typ="button" class="readBtn-wraper"><a href="#" class="read-btn">Read more</a></button>
-                </div>
-
-                <div class="intro-info-container">
-            <div class="info-wraper">
-                <div class="info-foto-container">
-                    <img src="./img/spear-phishing.jpeg" alt="">
-                </div>
-                <div class="info-text">
-                    <h1> Phishing </h1>
-                    <p>Phishing is een vorm van cybercrime waarbij criminelen een e-mail naar je verzenden om te proberen inloggegevens, 
-                        creditcardinformatie, pincodes of andere persoonlijke gegevens van jou te achterhalen. Vandaar het woord phishing, 
-                        dat ‘hengelen’ betekent.Als afzender van de e-mail staat de naam van je bank, creditcardmaatschappij of een 
-                        andere betrouwbare instantie vermeld. In het bericht staat bijvoorbeeld dat de bank je gegevens wil 
-                        controleren vanwege een update of dat je rekening is geblokkeerd. Of je zou een prijs hebben gewonnen of een 
-                        erfenis krijgen. Door de betrouwbaar ogende afzender kun je geneigd zijn te antwoorden op de vraag in de nepmail
-                         om je inloggegevens of pincode. Doe dit nooit. Een bank of andere betrouwbare instantie vraagt niet per e-mail 
-                         om je persoonlijke gegevens aan ze door te geven. Je bank verstuurt alleen e-mail naar je die je kunt vinden 
-                         nadat je bent ingelogd in de app of op de website. Klik ook nooit op een link in de e-mail. Als je dit wel zou 
-                         doen, wordt er ongemerkt op je computer een kwaadaardig programma geïnstalleerd.
-
-
-                    <h3>Hoe kan ik het voorkomen?</h3>
-                   <ol>
-                    <ul>• Reageer niet op het bericht.</ul>
-                  	<ul>• Meld de phishing bij Fraudehelpdesk </ul>
-                    <ul>•Meld de phishing bij de organisatie namens wie het valse bericht verstuurd werd. </ul>
-                    <ul>•	Klik nooit op een link of telefoonnummer als je twijfelt aan de echtheid van een bericht.
-                         Eerst checken dan klikken. </ul>
-                      </ol>
+                      </ul>
                   
                     </p>
                     <button typ="button" class="readBtn-wraper"><a href="#" class="read-btn">Read more</a></button>
                 </div>
+
             </div>
            
 
