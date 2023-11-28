@@ -139,14 +139,26 @@
     text-align: center;
     padding: 20px;
     border-bottom: 1px solid #000;
+    width: 100%;
 }
 .info-text p {
     margin-top: 1rem;
+    padding: 10px;
+    width: 100%;
 }
 .Read-btn {
     background-color: $primery_color_1;
 }
 
+.info-text h3{
+    margin: 10px;
+    width: 100%;
+}
+.info-text ul li{
+    // list-style: none;
+    margin-top: 10px;
+    margin-left: 5%;
+}
 @media only screen and (max-width: 850px) {
     .intro-box  {
         opacity: 0.8;
@@ -159,15 +171,15 @@
         position: absolute;
         top: 15vmin;
         right: -10vw;
-        width: 100vmin;
+        width: 100%;
         opacity: 0.5;
         filter: brightness(50%);
     }
     .info-text{
         width: 100%;
     }
+ 
     .info-wraper {
-        // background-color: $primery_color_3;
         padding: 20px;
         height: 100%;
         width: 100%;

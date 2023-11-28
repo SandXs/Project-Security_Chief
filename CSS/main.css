@@ -232,14 +232,27 @@
   text-align: center;
   padding: 20px;
   border-bottom: 1px solid #000;
+  width: 100%;
 }
 
 .info-text p {
   margin-top: 1rem;
+  padding: 10px;
+  width: 100%;
 }
 
 .Read-btn {
   background-color: #E7EDF9;
+}
+
+.info-text h3 {
+  margin: 10px;
+  width: 100%;
+}
+
+.info-text ul li {
+  margin-top: 10px;
+  margin-left: 5%;
 }
 
 @media only screen and (max-width: 850px) {
@@ -254,7 +267,7 @@
     position: absolute;
     top: 15vmin;
     right: -10vw;
-    width: 100vmin;
+    width: 100%;
     opacity: 0.5;
     filter: brightness(50%);
   }
