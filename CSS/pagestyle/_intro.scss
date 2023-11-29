@@ -48,7 +48,7 @@
     text-align: end;
 }
 .bg-rotate,
-.read-btn {
+.read-btn{
     text-decoration: none;
     text-align: center;
     position: relative;
@@ -56,6 +56,21 @@
     width: 100%;
     padding: 15px;
     transition:all 500ms ease-in-out;
+}
+.readbtn_container{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+}
+.readBtnInfo {
+  color:$primery_color_2;
+  padding: 10px;
+  width: fit-content;
+  background: none;
+  outline: none;
+  cursor: pointer;
+  border: 1px solid $primery_color_2;
 }
 .bg-rotate::before,
 .read-btn::before {
@@ -96,69 +111,6 @@
     filter: brightness(80%);
 }
 
-/*intro info*/
-
-.intro-info-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    width: 100%;
-    height: 100%;
-    // margin-top: 5%;
-
-}
-.info-wraper{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    z-index: 1;
-    height: 100%;
-    width: 100%;
-    margin-top: 5%;
-    // border-radius: 24px;
-   
-}
-
-.info-foto-container {
-    display: flex;
-    justify-content: center;
-    width:40vmax;
-    background-color: rgb(132, 217, 20);
-
-}
-.intro-info-container img{
-    width: 100%;
-    background-color: rgb(177, 8, 50);
-
-}
-.info-text {
-    width: 40%;
-    padding: 1.3rem;
-}
-.info-text h1 {
-    text-align: center;
-    padding: 20px;
-    border-bottom: 1px solid #000;
-    width: 100%;
-}
-.info-text p {
-    margin-top: 1rem;
-    padding: 10px;
-    width: 100%;
-}
-.Read-btn {
-    background-color: $primery_color_1;
-}
-
-.info-text h3{
-    margin: 10px;
-    width: 100%;
-}
-.info-text ul li{
-    // list-style: none;
-    margin-top: 10px;
-    margin-left: 5%;
-}
 @media only screen and (max-width: 850px) {
     .intro-box  {
         opacity: 0.8;
@@ -176,7 +128,8 @@
         filter: brightness(50%);
     }
     .info-text{
-        width: 100%;
+        min-width: 100%;   
+       
     }
  
     .info-wraper {

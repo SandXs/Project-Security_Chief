@@ -4,6 +4,7 @@
 @import "./pagestyle/tools";
 @import "./pagestyle/contact";
 @import "./pagestyle/login";
+@import "./pagestyle/info";
 
 * {
     margin: 0;
@@ -22,3 +23,8 @@ body {
     height: auto;
     position: relative;
 }
+
+
+// .hidden{
+//     display: none ;
+// }
