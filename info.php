@@ -18,7 +18,8 @@ setTimeout(function() {
             <div class="intro-container">
                 <div class="intro-text">
                     <h1>Doe mee en word lid van Security chief </h1>
-                    <p>Wij zijn security chief. Wij proberen u het beste te beschermen tegen cybercrime. 
+                    <p>Wij zijn security chief. Op deze pagina proberen wie u het best te beschermen tegen cybercrime. Hier vind u alle informatie 
+                        die u nodig heeft.
                         Wordt u ook lid van Security Chief? </p>
 
                     <div class="contact_wrap">
