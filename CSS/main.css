@@ -330,6 +330,11 @@
   width: 80%;
 }
 
+.form_container .loginTitle {
+  text-align: center;
+  padding: 20px;
+}
+
 .form_container form {
   display: flex;
   justify-content: flex-start;
@@ -343,7 +348,7 @@
   outline: none;
   padding: 15px;
   margin: 10px;
-  border-radius: 50px;
+  border-radius: 10px;
   min-width: 20vw;
   font-size: 15px;
 }

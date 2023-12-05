@@ -31,7 +31,24 @@ if (isset($_POST['signin'])) {
 }
 
 ?>
-<div class="container col-4 border rounded bg-light mt-5" style='--bs-bg-opacity: .5;'>
+   <section class="login-container">
+        <div class="form_container login_form">
+            <h1 class="loginTitle"> Login</h1>
+                <form id="login" method="post">
+                    <div class="from_input">
+                        <input type="text" name="Email" id="name" placeholder="email"  autocomplete="off" required>
+                        <input type="password" name="password" id="fullName" placeholder="WachtWoord"  autocomplete="off" required>
+                    </div>
+                  
+                </form >
+                <div class="submit_btn">
+                        <button type="submit" name="signin">Signin</button>
+                    </div>
+                <!-- <p><a href="#">Vergeet Wachtwoord </a> </p> -->
+                <p>Heb je geen accaunt dan ? <a href="./contact.php">Contact ons</a> </p>
+        </div>
+    </section>
+<!-- <div class="container col-4 border rounded bg-light mt-5" style='--bs-bg-opacity: .5;'>
   <h1 class="text-center">Sign In</h1>
   <hr>
   <form id="login" method="post">
@@ -49,4 +66,4 @@ if (isset($_POST['signin'])) {
       <input  type="submit" name="signin" value="Sign In" class="btn btn-primary">
     </div>
   </form>
-</div>
+</div> -->
