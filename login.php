@@ -45,7 +45,7 @@ if (isset($_POST['signin'])) {
                         <button type="submit" name="signin" id='signin'>Signin</button>
                     </div>
                 <!-- <p><a href="#">Vergeet Wachtwoord </a> </p> -->
-                <p>Heb je geen accaunt dan ? <a href="./contact.php">Contact ons</a> </p>
+                <p>Heb je geen account dan ? <a href="./contact.php">Contact ons</a> </p>
         </div>
     </section>
 <!-- <div class="container col-4 border rounded bg-light mt-5" style='--bs-bg-opacity: .5;'>
