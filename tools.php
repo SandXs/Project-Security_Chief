@@ -2,6 +2,10 @@
 include("functions/connectdb.php");
 include("default_values.php");
 
+function currentDate(){
+    return date("Y-m-d h:i:s");
+}
+
 function test_input($con,$data) {
     $data = trim($data);
     $data = stripslashes($data);
