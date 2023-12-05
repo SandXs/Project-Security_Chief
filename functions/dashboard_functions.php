@@ -115,8 +115,9 @@ switch($_POST['function']){
                 ticket_create_date = "'.currentDate().'"';
             mysqli_query($con, $query);
             mysqli_close($con);
+            echo 'true';
         } else {
-            echo 'Niet alle velden zijn ingevuld';
+            echo 'false';
         }
         break;
     
