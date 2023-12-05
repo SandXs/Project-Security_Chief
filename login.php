@@ -26,7 +26,7 @@ if (isset($_POST['signin'])) {
         //! Session data can be hijacked. Never store personal data such as password, security pin, credit card numbers other important data in $_SESSION
         header('location: dashboard.php?id=' . $user_id);
   } else {
-        header('location: login.php');
+    header('location: login.php');
   }
 }
 
@@ -36,13 +36,13 @@ if (isset($_POST['signin'])) {
             <h1 class="loginTitle"> Login</h1>
                 <form id="login" method="post">
                     <div class="from_input">
-                        <input type="text" name="Email" id="name" placeholder="email"  autocomplete="off" required>
-                        <input type="password" name="password" id="fullName" placeholder="WachtWoord"  autocomplete="off" required>
+                        <input type="text" name="email" id="email" placeholder="email"  autocomplete="off" required>
+                        <input type="password" name="password" id="password" placeholder="WachtWoord"  autocomplete="off" required>
                     </div>
                   
                 </form >
                 <div class="submit_btn">
-                        <button type="submit" name="signin">Signin</button>
+                        <button type="submit" name="signin" id='signin'>Signin</button>
                     </div>
                 <!-- <p><a href="#">Vergeet Wachtwoord </a> </p> -->
                 <p>Heb je geen accaunt dan ? <a href="./contact.php">Contact ons</a> </p>

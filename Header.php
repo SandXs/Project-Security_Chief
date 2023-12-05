@@ -57,7 +57,7 @@ include("tools.php");
                         </a>
                     </li>
                     <li class="list_item">
-                        <a href="./Login.php"><i class="fa-solid fa-right-to-bracket"></i>
+                        <a href="./login.php"><i class="fa-solid fa-right-to-bracket"></i>
                             Login</a>
                     </li>
                 </div>

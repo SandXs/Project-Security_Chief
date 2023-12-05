@@ -449,6 +449,11 @@ input[type=number] {
   font-size: 18px;
   border-radius: 10px;
   cursor: pointer;
+  transition: all 50ms ease-in-out;
+}
+
+.submit_btn button:active {
+  transform: scale(0.98);
 }
 
 @media only screen and (max-width: 850px) {
