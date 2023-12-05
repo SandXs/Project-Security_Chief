@@ -153,6 +153,7 @@ $user = Get_user_info($_SESSION['id']);
   function save_edited_ticket(){
     $.post("functions/dashboard_functions.php",{ 
       function: "save_edited_ticket",
+      ticket_id: $("#Ticket_Edit_Dialog input[name='ticket_id']").val(),
       ticket_subject: $("#Ticket_Edit_Dialog input[name='ticket_subject']").val(),
       ticket_type: $("#Ticket_Edit_Dialog select[name='ticket_type']").val(),
       ticket_email: $("#Ticket_Edit_Dialog input[name='ticket_email']").val(),

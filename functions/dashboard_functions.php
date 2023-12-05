@@ -53,14 +53,16 @@ switch($_POST['function']){
     
     case 'save_edited_ticket':
         $con = connectdb();
-        $query = 'UPDATE tickets SET 
-            ticket_email = "'.test_input($con,(($_POST['ticket_email'])!==""?$_POST['ticket_email']:$GLOBALS['user']['user_email'])).'",
-            ticket_subject = "'.test_input($con,$_POST['ticket_subject']).'",
-            ticket_type = '.intval(test_input($con,$_POST['ticket_type'])).',
-            ticket_content = "'.test_input($con,$_POST['ticket_content']).'",
-            ticket_priority = '.intval(test_input($con,$_POST['ticket_priority'])).',
-            ticket_response = "'.test_input($con,$_POST['ticket_response']).'"
-        WHERE ticket_id = '.$_POST['ticket_id'];
+        //echo $_POST['ticket_id'];
+        $query = "UPDATE tickets SET 
+            ticket_email = '".test_input($con,(($_POST['ticket_email'])!==""?$_POST['ticket_email']:$GLOBALS['user']['user_email']))."',
+            ticket_subject = '".test_input($con,$_POST['ticket_subject'])."',
+            ticket_type = ".intval(test_input($con,$_POST['ticket_type'])).",
+            ticket_content = '".test_input($con,$_POST['ticket_content'])."',
+            ticket_priority = ".intval(test_input($con,$_POST['ticket_priority'])).",
+            ticket_response = '".test_input($con,$_POST['ticket_response'])."'
+        WHERE ticket_id = ".$_POST['ticket_id'];
+        //echo $query;
         mysqli_query($con, $query);
         mysqli_close($con);
         break;
@@ -187,7 +189,7 @@ switch($_POST['function']){
                 echo '
                 <div class="form-popup Popup_wrapper" id="Ticket_Edit_Dialog">
                 <form method="" class="form-container">
-                    <input type="hidden" val="'.$ticket['ticket_id'].'" name="ticket_id">
+                    <input type="hidden" value="'.$ticket['ticket_id'].'" name="ticket_id">
                     <h1>Edit</h1>
                     <div>
                         <label for="user_company"><b>Company name</b></label>
