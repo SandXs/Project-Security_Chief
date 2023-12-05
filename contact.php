@@ -19,7 +19,7 @@ include './Header.php';
                             <option value="1">Acount Aanvragen</option>
                             <option value="2">Test Aanvragen</option>
                             <option value="3">Q&A</option>
-                            <option value="4">Probleem aanmelden</option>
+                            <option value="4">Andere</option>
                         </select>
                         <input type="text" name="Full name" id="fullName" placeholder="Voor-AchterNaam">
                         <input type="text" name="companyName" id="companyName" placeholder="Bedrijf naam">
@@ -28,11 +28,16 @@ include './Header.php';
                     <div class="description_input">
                         <textarea name="omschrijving" id="omschrijving" cols="40" rows="5" placeholder="Omschrijving..."></textarea>
                     </div>
+                        <div class="submit_btn">
+                            <button type="button" onclick="submit_new_ticket()">Versturen</button>
+                        </div>
                 </form>
-                <div class="submit_btn">
-                        <button type="submit">Versturen</button>
-                    </div>
         </div>
     </section>
 </body>
+<script>
+    function submit_new_ticket(){
+        console.log('test');
+    }
+</script>
 </html>

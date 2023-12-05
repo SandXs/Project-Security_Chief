@@ -38,20 +38,6 @@
   display: block;
 }
 
-.menu_btn {
-  position: absolute;
-  left: 90%;
-  bottom: 50%;
-  transition: all 500ms ease-in-out;
-  text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.6);
-  cursor: pointer;
-}
-
-.menu_btn i {
-  font-size: 50px;
-  color: #8EACCD;
-}
-
 #menu_bar {
   display: none;
 }
@@ -72,9 +58,6 @@
 }
 
 @media only screen and (max-width: 850px) {
-  .menu_btn {
-    display: none;
-  }
   .header-container {
     display: flex;
     justify-content: center;
@@ -108,12 +91,13 @@
 }
 
 .intro-text h1 {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .intro-text p {
-  margin-left: 1.5rem;
   font-size: 18px;
+  padding: 10px;
+  line-height: 150%;
 }
 
 .contact_wrap {
@@ -212,18 +196,19 @@
 
 @media only screen and (max-width: 850px) {
   .intro-box {
+    position: relative;
     opacity: 0.8;
   }
   .introFoto-container {
     z-index: -1;
-    top: 0;
+    bottom: 0;
   }
   .intro-foto {
     position: absolute;
-    top: 15vmin;
-    right: -10vw;
-    width: 100%;
+    top: 0vmin;
+    right: 0vw;
     opacity: 0.5;
+    z-index: 1;
     filter: brightness(50%);
   }
   .info-text {
@@ -438,10 +423,12 @@ input[type=number] {
   align-items: center;
   width: 40vmax;
   height: auto;
+  padding: 20px;
 }
 
 .intro-info-container img {
   width: 100%;
+  border-radius: 20px;
 }
 
 .info-text {
@@ -462,6 +449,7 @@ input[type=number] {
   margin-top: 1rem;
   padding: 10px;
   line-height: 150%;
+  color: rgb(100, 98, 98);
 }
 
 .Read-btn {
@@ -476,20 +464,23 @@ input[type=number] {
 .info-text ul li {
   margin-top: 10px;
   margin-left: 5%;
-}
-
-#readmore {
-  display: none;
+  color: rgb(100, 98, 98);
 }
 
 .info-text b {
   font-size: 20px;
+  color: #000;
+}
+
+.toggle-text {
+  display: none;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -502,4 +493,36 @@ body {
   max-width: 100%;
   height: auto;
   position: relative;
+}
+
+.adminFoto_container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.adminFoto_container .adminFoto {
+  width: 30vw;
+  height: 30vw;
+  filter: brightness(80%);
+  border-radius: 20px;
+}
+
+@media only screen and (max-width: 650px) {
+  .adminFoto_container {
+    position: absolute;
+    z-index: -1;
+    padding: 0;
+  }
+  .adminFoto_container .adminFoto {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    -o-object-fit: cover;
+       object-fit: cover;
+    opacity: 0.5;
+    filter: brightness(60%);
+  }
 }/*# sourceMappingURL=main.css.map */

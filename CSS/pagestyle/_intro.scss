@@ -4,6 +4,7 @@
     justify-content: center;
     width: 100%;
     background-color: $primery_color_3;
+
 }
 .intro-container {
     width: 80%;
@@ -22,11 +23,12 @@
 }
 
 .intro-text h1 {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 .intro-text p {
-    margin-left: 1.5rem;
     font-size: 18px;
+    padding: 10px;
+    line-height: 150%;
 }
 .contact_wrap {
     display: flex;
@@ -113,18 +115,19 @@
 
 @media only screen and (max-width: 850px) {
     .intro-box  {
+        position: relative;
         opacity: 0.8;
     }
     .introFoto-container {
         z-index: -1;
-        top: 0;
+        bottom: 0;
     }
     .intro-foto {
         position: absolute;
-        top: 15vmin;
-        right: -10vw;
-        width: 100%;
+        top: 0vmin;
+        right: 0vw;
         opacity: 0.5;
+        z-index: 1;
         filter: brightness(50%);
     }
     .info-text{

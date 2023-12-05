@@ -28,10 +28,12 @@
     align-items: center;
     width:40vmax;
     height: auto;
+    padding: 20px;
 
 }
 .intro-info-container img{
     width: 100%;
+    border-radius: 20px;
 
 }
 .info-text {
@@ -51,6 +53,7 @@
     padding: 10px;
     // width: 100%;
     line-height: 150%;
+    color: rgb(100, 98, 98);
     
 }
 .Read-btn {
@@ -65,12 +68,16 @@
     // list-style: none;
     margin-top: 10px;
     margin-left: 5%;
+    color: rgb(100, 98, 98);
 
-}
-#readmore{
-    display: none;
 }
 
 .info-text b{
     font-size: 20px; 
+    color: #000;
 }
+
+.toggle-text{
+    display: none;
+  }
+  

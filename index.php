@@ -56,7 +56,7 @@ include './Header.php';
                 </ul>
 
 
-                <button typ="button" class="readBtn-wraper"><a href="#" class="read-btn">Read more</a></button>
+                <button typ="button" class="readBtn-wraper"><a href="./info.php#phishing" class="read-btn">Read more</a></button>
             </div>
         </div>
         <div class="info-wraper">
@@ -76,7 +76,7 @@ include './Header.php';
                 </ul>
 
 
-                <button typ="button" class="readBtn-wraper"><a href="#" class="read-btn">Read more</a></button>
+                <button typ="button" class="readBtn-wraper"><a href="./info.php#scam" class="read-btn">Read more</a></button>
             </div>
         </div>
         <div class="info-wraper">
@@ -96,7 +96,7 @@ include './Header.php';
                 </ul>
 
 
-                <button typ="button" class="readBtn-wraper"><a href="#" class="read-btn">Read more</a></button>
+                <button typ="button" class="readBtn-wraper"><a href="./info.php#malware" class="read-btn">Read more</a></button>
             </div>
         </div>
         <div class="info-wraper">
@@ -117,7 +117,7 @@ include './Header.php';
                 </ul>
 
 
-                <button typ="button" class="readBtn-wraper"><a href="#" class="read-btn">Read more</a></button>
+                <button typ="button" class="readBtn-wraper"><a href="./info.php#hacking" class="read-btn">Read more</a></button>
             </div>
         </div>
         <div class="info-wraper">
@@ -140,7 +140,7 @@ include './Header.php';
                 </ul>
 
 
-                <button typ="button" class="readBtn-wraper"><a href="#" class="read-btn">Read
+                <button typ="button" class="readBtn-wraper"><a href="./info.php#ransomware" class="read-btn">Read
                         more</a></button>
             </div>
         </div>
@@ -162,7 +162,7 @@ include './Header.php';
                 </ul>
 
 
-                <button typ="button" class="readBtn-wraper"><a href="#" class="read-btn">Read
+                <button typ="button" class="readBtn-wraper"><a href="./info.php#DDoS" class="read-btn">Read
                         more</a></button>
             </div>
         </div>
@@ -186,7 +186,7 @@ include './Header.php';
                 </ul>
 
 
-                <button typ="button" class="readBtn-wraper"><a href="#" class="read-btn">Read
+                <button typ="button" class="readBtn-wraper"><a href="./info.php#spoofing" class="read-btn">Read
                         more</a></button>
             </div>
         </div>
@@ -209,7 +209,7 @@ include './Header.php';
                 </ul>
 
 
-                <button typ="button" class="readBtn-wraper"><a href="#" class="read-btn">Read
+                <button typ="button" class="readBtn-wraper"><a href="./info.php#identiteitsfraude" class="read-btn">Read
                         more</a></button>
             </div>
         </div>
@@ -232,7 +232,7 @@ include './Header.php';
                 </ul>
 
 
-                <button typ="button" class="readBtn-wraper"><a href="#" class="read-btn">Read
+                <button typ="button" class="readBtn-wraper"><a href="./info.php#cryptojacking" class="read-btn">Read
                         more</a></button>
             </div>
 

@@ -38,19 +38,6 @@
     color: #fff;
     display: block;
 }
-.menu_btn{
-    position: absolute;
-    left: 90%;
-    bottom: 50%;
-    transition: all 500ms ease-in-out;
-    text-shadow: 1px 2px 4px  rgba(0, 0, 0, 0.6);
-    cursor: pointer;
-}
-.menu_btn i{
- font-size: 50px;
- color: #8EACCD;
-}
-
 #menu_bar{
     display: none;
 }
@@ -69,9 +56,6 @@
     
 }
 @media only screen and (max-width: 850px) {
-    .menu_btn{
-        display: none; 
-    }
     .header-container{
         display: flex;
         justify-content: center;
@@ -82,15 +66,3 @@
     }
 }
 
-// #menu_btn{
-// display: none;
-// }
-
-
-// #menu_btn:checked ~ .header-container{
-//     left: -105px;
-// }
-
-// #menu_btn:checked ~ .header-container .menu_btn {
-//     transform: rotate(-175deg);
-// }
