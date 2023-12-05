@@ -21,4 +21,22 @@ function Get_user_info ($id){
     $row = mysqli_fetch_array($result);
     return $row;
 }
+
+function Fast_encrypt($message_to_encrypt) {
+    $secret_key = "H4atkufCUYZ1ydyozLlxoJKgBcf0vp";
+    $method = "AES-256-CBC";
+    $iv_length = openssl_cipher_iv_length($method);
+    $iv = openssl_random_pseudo_bytes($iv_length);
+    $encrypted_message = openssl_encrypt($message_to_encrypt, $method, $secret_key, 0, $iv);
+    return $encrypted_message;
+}
+function Fast_decrypt($encrypted_message) {
+    $secret_key = "H4atkufCUYZ1ydyozLlxoJKgBcf0vp";
+    $method = "AES-256-CBC";
+    $iv_length = openssl_cipher_iv_length($method);
+    $iv = openssl_random_pseudo_bytes($iv_length);
+    $decrypted_message = openssl_decrypt($encrypted_message, $method, $secret_key, 0, $iv);
+    return $decrypted_message;
+}
+
 ?>

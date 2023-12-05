@@ -5,9 +5,9 @@ if (!isset($_SESSION['id'])) {         // condition Check: if session is not set
   header('location: login.php');   // if not set the user is sendback to login page.
 }
 
+//$user = Get_user_info(Fast_decrypt($_SESSION['id']));
 $user = Get_user_info($_SESSION['id']);
 ?>
-<body>
   <!-- <div class="menu">
     <button class="open-button" onclick="showTickets()">Tickets</button>
     <button class="open-button" onclick="showUsers();">Users</button>
@@ -161,7 +161,7 @@ $user = Get_user_info($_SESSION['id']);
       ticket_content: $("#Ticket_Edit_Dialog textarea[name='ticket_content']").val(),
       ticket_response: $("#Ticket_Edit_Dialog textarea[name='ticket_response']").val()
     }).done(function(data) {
-      console.log(data);
+      $("#Ticket_Edit_Dialog input[name='ticket_id']").val("");
       $("#Ticket_Edit_Dialog input[name='ticket_subject']").val("");
       $("#Ticket_Edit_Dialog select[name='ticket_type']").val("");
       $("#Ticket_Edit_Dialog input[name='ticket_email']").val("");
@@ -185,10 +185,6 @@ $user = Get_user_info($_SESSION['id']);
     });
   });
 
-  $("#checkAll").click(function () {
-    $("input:checkbox").not(this).prop("checked", this.checked);
-  });
-
   function loadUsers() {
     $.post("functions/dashboard_functions.php",{ 
       function: "load_Users"
@@ -206,7 +202,7 @@ $user = Get_user_info($_SESSION['id']);
     load_popup("popup_sure_del_user");
   }
 
-  //delete ticket
+  //delete users
   function delUsers(){
     var user_ids = [];
     $("#userslist tbody tr input:checkbox").each(function(){
@@ -242,11 +238,35 @@ $user = Get_user_info($_SESSION['id']);
       loadUsers();
     });
   }
-</script>
 
-<?php
-if (isset($_POST['signout'])) {
-  session_destroy();            //  destroys session 
-  header('location: index.php');
-}
-?>
+  function saveEditedUser(){
+    $.post("functions/dashboard_functions.php",{ 
+      function: "save_edit_user",
+      user_email: $("#User_Create_Dialog input[name='user_email']").val(),
+      user_firstname: $("#User_Create_Dialog input[name='user_firstname']").val(),
+      user_lastname: $("#User_Create_Dialog input[name='user_lastname']").val(),
+      user_company: $("#User_Create_Dialog input[name='user_company']").val(),
+      user_is_admin: $("#User_Create_Dialog input[name='user_is_admin']").val()
+    }).done(function(data) {
+      $("#User_Create_Dialog input[name='user_email']").val("");
+      $("#User_Create_Dialog input[name='user_firstname']").val("");
+      $("#User_Create_Dialog input[name='user_lastname']").val("");
+      $("#User_Create_Dialog input[name='user_company']").val("");
+      $("#User_Create_Dialog input[name='user_is_admin']").val("");
+      closePopup();
+      loadUsers();
+    });
+  }
+
+  //edit users
+  $("#userslist").on("click","tbody tr", function(){
+    $.post("functions/dashboard_functions.php",{ 
+      function: "popups",
+      type_popup: "popup_user_edit",
+      user_id: $(this).data("user_id")
+    }).done(function(data){
+      $("body .popups").last().append(data);
+      $("body .popups").css({"position": "absolute","z-index": "999"});
+    });
+  });
+</script>

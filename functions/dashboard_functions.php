@@ -1,5 +1,6 @@
 <?php session_start();       // Start the session
 require("../tools.php");
+//$user = Get_user_info(Fast_decrypt($_SESSION['id']));
 $user = Get_user_info($_SESSION['id']);
 
 switch($_POST['function']){
@@ -23,7 +24,8 @@ switch($_POST['function']){
                 <td>'. $row['ticket_subject'] .'</td>
                 <td>'. $row['ticket_content'] .'</td>
                 <td>'. $row['ticket_email'] .'</td>
-                <td>'. (($row['ticket_response']!=='') ? $row['ticket_response'] : "") .'</td>
+                <td>'. (($row['ticket_response']!=='' && isset($row['ticket_response'])) ? "<i class='fa fa-envelope' aria-hidden='true'></i>
+                " : "") .'</td>
             </tr>';
         }
         echo $ticket_row;
@@ -75,13 +77,14 @@ switch($_POST['function']){
         $user_row = '';
         while($row = mysqli_fetch_array($result)){
             $user_row .= '
-            <tr class="clickable-row" data-ticket_id="'. $row['user_id'] .'">
-                <td><input type="checkbox" name="ticket_checkbox" id="'. $row['user_id'] .'"></td>
+            <tr class="clickable-row" data-user_id="'. $row['user_id'] .'">
+                <td><input type="checkbox" name="user_checkbox" id="'. $row['user_id'] .'"></td>
                 <td>'. $row['user_id'] .'</td>
                 <td>'. $row['user_firstname'] .' '. $row['user_lastname'] .'</td>
                 <td>'. $row['user_company'] .'</td>
                 <td>'. $row['user_email'] .'</td>
-                <td>'. $row['user_is_admin'] .'</td>
+                <td>'. (($row['user_is_admin']==1) ? "<i class='fa fa-check-circle-o' aria-hidden='true'></i>
+                " : "") .'</td>
             </tr>';
         }
         echo $user_row;
@@ -99,6 +102,26 @@ switch($_POST['function']){
             user_del = 0,
             user_create_date = "'.currentDate().'",
             user_pass = "abc1234"';
+        mysqli_query($con, $query);
+        mysqli_close($con);
+        break;
+
+    case 'save_edit_user':
+        $con = connectdb();
+        $query = "UPDATE users SET 
+            user_email = '".test_input($con,$_POST['user_email'])."',
+            user_firstname = '".test_input($con,$_POST['user_firstname'])."',
+            user_lastname = '".test_input($con,$_POST['user_lastname'])."',
+            user_company = '".test_input($con,$_POST['user_company'])."',
+            user_is_admin = ".intval(test_input($con,$_POST['user_is_admin']))."
+        WHERE user_id = ".$_POST['user_id'];
+        mysqli_query($con, $query);
+        mysqli_close($con);
+        break;
+    
+    case 'del_user':
+        $con = connectdb();
+        $query = 'UPDATE users SET user_del = 1 WHERE user_id IN ('.implode(",",$_POST['user_id']).')';
         mysqli_query($con, $query);
         mysqli_close($con);
         break;
@@ -125,6 +148,7 @@ switch($_POST['function']){
     
     case 'popups':
         switch ($_POST['type_popup']) {
+
             case 'popup_ticket_create':
                 echo '
                 <div class="form-popup Popup_wrapper" id="Ticket_Create_Dialog">
@@ -171,6 +195,7 @@ switch($_POST['function']){
                 </form>
                 </div>';
                 break;
+
             case 'popup_sure_del_ticket':
                 echo '
                 <div class="form-popup Popup_wrapper">
@@ -181,6 +206,7 @@ switch($_POST['function']){
                     </div>
                 </div>';
                 break;
+
             case 'popup_ticket_edit':
                 $con = connectdb();
                 $query = 'SELECT tickets.* ,users.user_company FROM tickets LEFT JOIN users ON tickets.ticket_email = users.user_email WHERE tickets.ticket_del = 0 AND tickets.ticket_id = "'.$_POST['ticket_id'].'"';
@@ -257,6 +283,7 @@ switch($_POST['function']){
                 </div>';
                 mysqli_close($con);
                 break;
+                
             case 'popup_user_create':
                 echo '
                 <div class="form-popup Popup_wrapper" id="User_Create_Dialog">
@@ -287,6 +314,43 @@ switch($_POST['function']){
                     </form>
                 </div>';
                 break;
+
+            case 'popup_user_edit':
+                $con = connectdb();
+                $query = 'SELECT * FROM users WHERE user_del = 0 AND user_id = "'.$_POST['user_id'].'"';
+                $result = mysqli_query($con, $query);
+                $user = mysqli_fetch_array($result);
+                echo '
+                <div class="form-popup Popup_wrapper" id="User_Create_Dialog">
+                    <form method="" class="form-container">
+                        <input type="hidden" value="'.$user['user_id'].'" name="user_id">
+                        <h1>Create user</h1>
+                        <div>
+                            <label for="user_subject"><b>Email</b></label>
+                            <input type="email" placeholder="Enter an Email" value="'.$user['user_email'].'" name="user_email" required>
+                        </div>
+                        <div>
+                            <label for="user_firstname"><b>First name</b></label>
+                            <input type="text" placeholder="Enter First Name" value="'.$user['user_firstname'].'" name="user_firstname" required>
+                        </div>
+                        <div>
+                            <label for="user_lastname"><b>Last name</b></label>
+                            <input type="text" placeholder="Enter Last Name" value="'.$user['user_lastname'].'" name="user_lastname" required>
+                        </div>
+                        <div>
+                            <label for="user_company"><b>Company</b></label>
+                            <input type="text" placeholder="Enter Company Name" value="'.$user['user_company'].'" name="user_company" required>
+                        </div>
+                        <div>
+                            <label for="user_is_admin"><b>is Admin</b></label>
+                            <input type="checkbox" '.(($user['user_id']==1)?"checked":"").' name="user_is_admin">
+                        </div>
+                        <button type="button" onclick="saveEditedUser()" class="btn">Send</button>
+                        <button type="button" class="btn cancel" onclick="closePopup()">Close</button>
+                    </form>
+                </div>';
+                break;
+
             case 'popup_sure_del_user':
                 echo '
                 <div class="form-popup Popup_wrapper">

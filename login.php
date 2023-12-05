@@ -21,7 +21,7 @@ if (isset($_POST['signin'])) {
       $user_password = $row['user_pass'];
   }
   if ($user_email == $email  &&  $user_password == $password) {
-
+        //$id = Fast_encrypt($user_id);
         $_SESSION['id'] = $user_id;       // Storing the value in session
         //! Session data can be hijacked. Never store personal data such as password, security pin, credit card numbers other important data in $_SESSION
         header('location: dashboard.php?id=' . $user_id);
@@ -39,31 +39,11 @@ if (isset($_POST['signin'])) {
                         <input type="text" name="email" id="email" placeholder="email"  autocomplete="off" required>
                         <input type="password" name="password" id="password" placeholder="WachtWoord"  autocomplete="off" required>
                     </div>
-                  
-                </form >
-                <div class="submit_btn">
+                    <div class="submit_btn">
                         <button type="submit" name="signin" id='signin'>Signin</button>
                     </div>
+                </form >
                 <!-- <p><a href="#">Vergeet Wachtwoord </a> </p> -->
                 <p>Heb je geen account dan ? <a href="./contact.php">Contact ons</a> </p>
         </div>
     </section>
-<!-- <div class="container col-4 border rounded bg-light mt-5" style='--bs-bg-opacity: .5;'>
-  <h1 class="text-center">Sign In</h1>
-  <hr>
-  <form id="login" method="post">
-    <div class="mb-3" id="emails">
-      <label for="email" class="form-label">Email ID</label>
-      <input type="email" class="form-control" name="email" placeholder="Enter your email" autocomplete="off" required>
-      <small class="text-muted">Your email is safe with us.</small>
-    </div>
-    <div class="mb-3" id="pass">
-      <label for="password" class="form-label">Password</label>
-      <input type="password" class="form-control" name="password" placeholder="Enter your password" required>
-      <small class="text-muted">Do not share your password.</small>
-    </div>
-    <div class="mb-3">
-      <input  type="submit" name="signin" value="Sign In" class="btn btn-primary">
-    </div>
-  </form>
-</div> -->
