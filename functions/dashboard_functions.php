@@ -100,7 +100,26 @@ switch($_POST['function']){
         mysqli_query($con, $query);
         mysqli_close($con);
         break;
-
+    
+    case 'send_contact_ticket':
+        if(($_POST['ticket_email']!=="")&&($_POST['ticket_type']!=="")&&($_POST['ticket_firstname']!=="")&&($_POST['ticket_lastname']!=="")&&($_POST['ticket_company']!=="")&&($_POST['ticket_content']!=="")){
+            $conent = 'Bedrijf: '.$_POST['ticket_company'].' Naam: '.$_POST['ticket_firstname'].' '.$_POST['ticket_lastname'].' Inhoud: '.$_POST['ticket_content'];
+            $con = connectdb();
+            $query = 'INSERT INTO tickets SET 
+                ticket_email = "'.test_input($con,$_POST['ticket_email']).'",
+                ticket_subject = "'.test_input($con,$_POST['ticket_subject']).'",
+                ticket_type = '.intval(test_input($con,$_POST['ticket_type'])).',
+                ticket_content = "'.test_input($con,$conent).'",
+                ticket_priority = 0,
+                ticket_del = 0,
+                ticket_create_date = "'.currentDate().'"';
+            mysqli_query($con, $query);
+            mysqli_close($con);
+        } else {
+            echo 'Niet alle velden zijn ingevuld';
+        }
+        break;
+    
     case 'popups':
         switch ($_POST['type_popup']) {
             case 'popup_ticket_create':
