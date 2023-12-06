@@ -61,22 +61,11 @@ include("tools.php");
                         <a href="./login.php"><i class="fa-solid fa-right-to-bracket"></i>
                             Login</a>
                     </li>
-                    <li id="logout" class="list_item">
-                        <form action="" method="post">
-                            <button type="submit" name="signout" class=" btn btn-warning mb-3"> Sign Out</button>
-                        </form>
-                    </li>
                 </div>
             </ul>
         </nav>
 
     </div>
-    <div class="popups" style="height:100%;width:100%;"></div>
 
   
-<?php
-if (isset($_POST['signout'])) {
-  session_destroy();            //  destroys session 
-  header('location: index.php');
-}
-?>
+

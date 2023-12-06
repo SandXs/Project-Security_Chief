@@ -7,7 +7,6 @@ if (!isset($_SESSION['id'])) {         // condition Check: if session is not set
 
 //$user = Get_user_info(Fast_decrypt($_SESSION['id']));
 $user = Get_user_info($_SESSION['id']);
-echo $user['user_is_new'];
 if ($user['user_is_new']==0){
   echo'
   <!-- <div class="menu">
@@ -17,7 +16,11 @@ if ($user['user_is_new']==0){
       <button type="submit" name="signout" class=" btn btn-warning mb-3"> Sign Out</button>
     </form>
   </div> -->
-  <div style="z-index: 1;position:absolute;">
+  <div style="z-index: 1;position:absolute;height: 100%;
+  width: 100%;">
+    <form action="" method="post">
+      <button type="submit" name="signout" class=" btn btn-warning mb-3"> Sign Out</button>
+    </form>
     <div id="tickets" class="container col-12 border rounded mt-3">
       <h1 class=" mt-3 text-center">Welcome, this is your dashboard!! </h1>
       <!-- A button to open the popup form -->
@@ -44,7 +47,7 @@ if ($user['user_is_new']==0){
     if($GLOBALS['user']['user_is_admin'] == 1){
       echo'
       <div id="users" class="container col-12 border rounded mt-3">
-        <button class="open-button" onclick="openUserCreate()">Create ticket</button>
+        <button class="open-button" onclick="openUserCreate()">Create user</button>
         <button class="open-button" onclick="sure_del_user()">Delete user(s)</button>
         <h2>All users</h2>
         <table id="userslist" class="table table-striped table-bordered table-hover">
@@ -71,6 +74,7 @@ if ($user['user_is_new']==0){
     }
   echo '
   </div>
+  <div class="popups" style="height:100%;width:100%;"></div>
   </body>
   <script>
     $(document).ready(function() {
@@ -112,11 +116,9 @@ if ($user['user_is_new']==0){
       function: "popups",
       type_popup: type_popup
     }).done(function(data){
+      $("body .popups").empty();
       $("body .popups").last().append(data);
       $("body .popups").css({"position": "absolute","z-index": "999"});
-      if(functions!== null){
-        functions
-      }
     });
   }
 
@@ -200,6 +202,7 @@ if ($user['user_is_new']==0){
       type_popup: "popup_ticket_edit",
       ticket_id: $(this).data("ticket_id")
     }).done(function(data){
+      $("body .popups").empty();
       $("body .popups").last().append(data);
       $("body .popups").css({"position": "absolute","z-index": "999"});
     });
@@ -285,6 +288,7 @@ if ($user['user_is_new']==0){
       type_popup: "popup_user_edit",
       user_id: $(this).data("user_id")
     }).done(function(data){
+      $("body .popups").empty();
       $("body .popups").last().append(data);
       $("body .popups").css({"position": "absolute","z-index": "999"});
     });
@@ -307,3 +311,9 @@ if ($user['user_is_new']==0){
     }
   }
 </script>
+<?php
+if (isset($_POST['signout'])) {
+  session_destroy();            //  destroys session 
+  header('location: index.php');
+}
+?>
