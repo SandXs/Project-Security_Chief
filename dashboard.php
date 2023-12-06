@@ -37,7 +37,7 @@ if ($user['user_is_new']==0){
             <td>Subject</td>
             <td>Content</td>
             <td>Email</td>
-            <td>Response</td>
+            <td></td>
           </tr>
         </thead>
         <tbody>
@@ -299,8 +299,6 @@ if ($user['user_is_new']==0){
     secondInput = $("#User_Updatepass_Dialog input[name='user_pass2']").val();
     if(firstInput !== "" && secondInput !== ""){
       if (firstInput === secondInput) {
-        //console.log(firstInput);
-        // do something here if inputs are same
         $.post("functions/dashboard_functions.php",{
           function: "savePassword",
           password: firstInput
