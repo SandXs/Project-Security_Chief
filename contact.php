@@ -51,18 +51,18 @@ include './Header.php';
             ticket_company: $("#ticket_contact input[name='companyName']").val(),
             ticket_content: $("#ticket_contact textarea[name='content']").val()
         }).done(function(data){
-            if(data!==""){
-                alert("Uw ticket is verstuurd (check uw email bevestiging)");
+            if(data!=="false"){
+                //alert("Uw ticket is verstuurd (check uw email bevestiging)");
+                $("#ticket_contact input[name='email']").val("");
+                $("#ticket_contact select[name='type']").val("");
+                $("#ticket_contact input[name='subject']").val("");
+                $("#ticket_contact input[name='firstname']").val("");
+                $("#ticket_contact input[name='lastname']").val("");
+                $("#ticket_contact input[name='companyName']").val("");
+                $("#ticket_contact textarea[name='content']").val("");
             } else {
                 alert("Niet alle velden zijn ingevuld");
             }
-            $("#ticket_contact input[name='email']").val("");
-            $("#ticket_contact select[name='type']").val("");
-            $("#ticket_contact input[name='subject']").val("");
-            $("#ticket_contact input[name='firstname']").val("");
-            $("#ticket_contact input[name='lastname']").val("");
-            $("#ticket_contact input[name='companyName']").val("");
-            $("#ticket_contact textarea[name='content']").val("");
         });
     }
 </script>
