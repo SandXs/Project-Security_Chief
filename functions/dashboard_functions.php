@@ -92,16 +92,17 @@ switch($_POST['function']){
         break;
 
     case 'create_user':
+        $hash = password_hash("Welkom1234", PASSWORD_DEFAULT);
         $con = connectdb();
         $query = 'INSERT INTO users SET 
-            user_email = "'.test_input($con,$_POST['user_email']).'",
+            user_email = "'.strtolower(test_input($con,$_POST['user_email'])).'",
             user_firstname = "'.test_input($con,$_POST['user_firstname']).'",
             user_lastname = "'.test_input($con,$_POST['user_lastname']).'",
             user_company = "'.test_input($con,$_POST['user_company']).'",
             user_is_admin = '.intval(test_input($con,$_POST['user_is_admin'])).',
             user_del = 0,
             user_create_date = "'.currentDate().'",
-            user_pass = "abc1234"';
+            user_pass = "'.$hash.'"';
         mysqli_query($con, $query);
         mysqli_close($con);
         break;

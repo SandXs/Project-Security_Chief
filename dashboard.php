@@ -227,7 +227,7 @@ $user = Get_user_info($_SESSION['id']);
       user_firstname: $("#User_Create_Dialog input[name='user_firstname']").val(),
       user_lastname: $("#User_Create_Dialog input[name='user_lastname']").val(),
       user_company: $("#User_Create_Dialog input[name='user_company']").val(),
-      user_is_admin: $("#User_Create_Dialog input[name='user_is_admin']").val()
+      user_is_admin: $("#User_Create_Dialog input[name='user_is_admin']:checked").length
     }).done(function(data) {
       $("#User_Create_Dialog input[name='user_email']").val("");
       $("#User_Create_Dialog input[name='user_firstname']").val("");

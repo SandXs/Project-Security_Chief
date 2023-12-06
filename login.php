@@ -4,29 +4,26 @@ include("Header.php");
 
 if (isset($_POST['signin'])) {
   $con = connectdb();
-  $email = test_input($con,$_POST['email']);
+  $email = strtolower(test_input($con,$_POST['email']));
   $password = test_input($con,$_POST['password']);
-
+  
   $query = 'SELECT * FROM users WHERE user_email = "'.$email.'"';
-  $user = mysqli_query($con, $query);
+  $result = mysqli_query($con, $query);
+  $user = mysqli_fetch_array($result);
 
   if (!$user) {
-    die('query Failed' . mysqli_error($con));
+    echo'login failed';
+    exit;
   }
 
-  while ($row = mysqli_fetch_array($user)) {
-      $user_id = $row['user_id'];
-      $user_name = $row['user_firstname'];
-      $user_email = $row['user_email'];
-      $user_password = $row['user_pass'];
-  }
-  if ($user_email == $email  &&  $user_password == $password) {
-        //$id = Fast_encrypt($user_id);
-        $_SESSION['id'] = $user_id;       // Storing the value in session
-        //! Session data can be hijacked. Never store personal data such as password, security pin, credit card numbers other important data in $_SESSION
-        header('location: dashboard.php?id=' . $user_id);
+  if (!password_verify($password,$user['user_pass'])) {
+    header('location: login.php'); 
+    exit;
   } else {
-    header('location: login.php');
+        // $id = Fast_encrypt($user_id);
+        $_SESSION['id'] = $user['user_id'];       // Storing the value in session
+        //! Session data can be hijacked. Never store personal data such as password, security pin, credit card numbers other important data in $_SESSION
+        header('location: dashboard.php?id=' . $user['user_id']);
   }
 }
 
