@@ -51,7 +51,7 @@ include './Header.php';
             ticket_company: $("#ticket_contact input[name='companyName']").val(),
             ticket_content: $("#ticket_contact textarea[name='content']").val()
         }).done(function(data){
-            if(data==true){
+            if(data!==""){
                 alert("Uw ticket is verstuurd (check uw email bevestiging)");
             } else {
                 alert("Niet alle velden zijn ingevuld");
