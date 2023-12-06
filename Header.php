@@ -33,7 +33,7 @@ include("tools.php");
                 <div class="list1">
                     <li class="list_item">
                         <a href="./index.php">
-                            <i class="fa-solid fa-house" style="color: #fff;"></i>
+                            <i class="fa-solid fa-house"></i>
                             Home
                         </a>
                     </li>
