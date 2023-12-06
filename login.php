@@ -20,10 +20,9 @@ if (isset($_POST['signin'])) {
     header('location: login.php'); 
     exit;
   } else {
-        // $id = Fast_encrypt($user_id);
-        $_SESSION['id'] = $user['user_id'];       // Storing the value in session
-        //! Session data can be hijacked. Never store personal data such as password, security pin, credit card numbers other important data in $_SESSION
-        header('location: dashboard.php?id=' . $user['user_id']);
+    $_SESSION['id'] = $user['user_id'];       // Storing the value in session
+    //! Session data can be hijacked. Never store personal data such as password, security pin, credit card numbers other important data in $_SESSION
+    header('location: dashboard.php?id=' . $user['user_id']);
   }
 }
 

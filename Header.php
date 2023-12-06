@@ -71,6 +71,8 @@ include("tools.php");
         </nav>
 
     </div>
+    <div class="popups" style="height:100%;width:100%;"></div>
+
   
 <?php
 if (isset($_POST['signout'])) {

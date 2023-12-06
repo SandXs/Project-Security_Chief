@@ -102,7 +102,8 @@ switch($_POST['function']){
             user_is_admin = '.intval(test_input($con,$_POST['user_is_admin'])).',
             user_del = 0,
             user_create_date = "'.currentDate().'",
-            user_pass = "'.$hash.'"';
+            user_pass = "'.$hash.'",
+            user_is_new = 1';
         mysqli_query($con, $query);
         mysqli_close($con);
         break;
@@ -114,7 +115,8 @@ switch($_POST['function']){
             user_firstname = '".test_input($con,$_POST['user_firstname'])."',
             user_lastname = '".test_input($con,$_POST['user_lastname'])."',
             user_company = '".test_input($con,$_POST['user_company'])."',
-            user_is_admin = ".intval(test_input($con,$_POST['user_is_admin']))."
+            user_is_admin = ".intval(test_input($con,$_POST['user_is_admin'])).",
+            user_last_edited_date = '".currentDate()."'
         WHERE user_id = ".$_POST['user_id'];
         mysqli_query($con, $query);
         mysqli_close($con);
@@ -146,7 +148,19 @@ switch($_POST['function']){
             echo 'false';
         }
         break;
-    
+
+    case'savePassword':
+        $con = connectdb();
+        $hash = password_hash(test_input($con,$_POST['password']), PASSWORD_DEFAULT);
+        $query = "UPDATE users SET 
+            user_pass = '".$hash."',
+            user_is_new = 0,
+            user_last_edited_date = '".currentDate()."'
+        WHERE user_id = ".$GLOBALS['user']['user_id'];
+        mysqli_query($con, $query);
+        mysqli_close($con);
+        break;
+
     case 'popups':
         switch ($_POST['type_popup']) {
 

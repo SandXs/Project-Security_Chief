@@ -7,7 +7,9 @@ if (!isset($_SESSION['id'])) {         // condition Check: if session is not set
 
 //$user = Get_user_info(Fast_decrypt($_SESSION['id']));
 $user = Get_user_info($_SESSION['id']);
-?>
+echo $user['user_is_new'];
+if ($user['user_is_new']==0){
+  echo'
   <!-- <div class="menu">
     <button class="open-button" onclick="showTickets()">Tickets</button>
     <button class="open-button" onclick="showUsers();">Users</button>
@@ -21,11 +23,11 @@ $user = Get_user_info($_SESSION['id']);
       <!-- A button to open the popup form -->
       <button class="open-button" onclick="openTicketCreate()">Create ticket</button>
       <button class="open-button" onclick="sure_del_ticket()">Delete ticket(s)</button>
-      <h2><?php echo (($GLOBALS['user']['user_is_admin'] == 1) ? "All active tickets" : "My tickets");?></h2>
+      <h2>'.(($GLOBALS['user']['user_is_admin'] == 1) ? "All active tickets" : "My tickets").'</h2>
       <table id="ticketlist" class="table table-striped table-bordered table-hover">
         <thead class="table-dark">
           <tr>
-            <td><?php echo (($GLOBALS['user']['user_is_admin'] == 1) ? "<input type='checkbox' id='checkAllTickets'>" : "");?></td>
+            <td>'.(($GLOBALS['user']['user_is_admin'] == 1) ? "<input type='checkbox' id='checkAllTickets'>" : "").'</td>
             <td>ID</td>
             <td>Priority</td>
             <td>Type</td>
@@ -38,8 +40,7 @@ $user = Get_user_info($_SESSION['id']);
         <tbody>
         </tbody>
       </table>
-    </div>
-    <?php
+    </div>';
     if($GLOBALS['user']['user_is_admin'] == 1){
       echo'
       <div id="users" class="container col-12 border rounded mt-3">
@@ -68,15 +69,34 @@ $user = Get_user_info($_SESSION['id']);
       </script>
       ';
     }
-    ?>
+  echo '
   </div>
-  <div class="popups" style="height:100%;width:100%;"></div>
-</body>
+  </body>
+  <script>
+    $(document).ready(function() {
+      loadTickets();
+    });
+  </script>';
+} else {
+  echo'
+  <div class="" id="User_Updatepass_Dialog">
+    <form method="" class="form-container">
+        <h1>Verander uw wachtwoord</h1>
+        <div>
+            <label for="user_pass1"><b>Wachtwoord</b></label>
+            <input type="password" placeholder="" name="user_pass1" required>
+        </div>
+        <div>
+            <label for="user_pass2"><b>Herhaal wachtwoord</b></label>
+            <input type="password" placeholder="" name="user_pass2" required>
+        </div>
+        <button type="button" onclick="confirmChangePass()" class="btn">Stel in</button>
+    </form>
+  </div>';
+}
+?>
 <script>
-  $(document).ready(function() {
-    loadTickets();
-  });
-  
+
   function closePopup() {
     $(".popups").empty();
     $("body .popups").css({ "position" : "", "z-index": "" });
@@ -269,4 +289,21 @@ $user = Get_user_info($_SESSION['id']);
       $("body .popups").css({"position": "absolute","z-index": "999"});
     });
   });
+
+  function confirmChangePass(){
+    firstInput = $("#User_Updatepass_Dialog input[name='user_pass1']").val();
+    secondInput = $("#User_Updatepass_Dialog input[name='user_pass2']").val();
+    if(firstInput !== "" && secondInput !== ""){
+      if (firstInput === secondInput) {
+        //console.log(firstInput);
+        // do something here if inputs are same
+        $.post("functions/dashboard_functions.php",{
+          function: "savePassword",
+          password: firstInput
+        }).done(function(){
+          window.location.reload();
+        });
+      }
+    }
+  }
 </script>
