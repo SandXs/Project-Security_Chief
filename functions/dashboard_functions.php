@@ -336,8 +336,9 @@ switch($_POST['function']){
                 $result = mysqli_query($con, $query);
                 $user = mysqli_fetch_array($result);
                 echo '
-                <div class="form-popup Popup_wrapper" id="User_Create_Dialog">
-                    <form method="" class="form-container">
+                <div class="Popup_wrapper" id="User_Create_Dialog">
+                <div  class="form-container">
+                    <form method="">
                         <input type="hidden" value="'.$user['user_id'].'" name="user_id">
                         <h1>Create user</h1>
                         <div>
@@ -363,6 +364,7 @@ switch($_POST['function']){
                         <button type="button" onclick="saveEditedUser()" class="btn">Send</button>
                         <button type="button" class="btn cancel" onclick="closePopup()">Close</button>
                     </form>
+                    </div>
                 </div>';
                 break;
 

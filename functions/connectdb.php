@@ -8,7 +8,7 @@
         //$con = connectdb();
         function connectdb() {
             
-            $con = mysqli_connect(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME);  
+            $con = mysqli_connect(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME, 8889);  
             if(mysqli_connect_errno()) {  
                 die("Failed to connect with MySQL: ". mysqli_connect_error());  
             }
