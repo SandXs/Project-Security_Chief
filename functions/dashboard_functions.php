@@ -166,23 +166,26 @@ switch($_POST['function']){
 
             case 'popup_ticket_create':
                 echo '
-                <div class="form-popup Popup_wrapper" id="Ticket_Create_Dialog">
+                <div class="Popup_wrapper" id="Ticket_Create_Dialog">
                 <form method="" class="form-container">
-                    <h1>Create ticket</h1>';
+                <h1>Create ticket</h1>
+                <div class="form-content">
+                    ';
                     if ($GLOBALS['user']['user_is_admin'] == 1) {
                         echo '
                         <div>
-                            <label for="ticket_subject"><b>Email</b></label>
-                            <input type="email" placeholder="Enter an Email" name="ticket_email" required>
+                            <label for="email" class="floting_lable">Email:</label>
+                            <input id="email" class="form-input" placeholder="Enter an Email"  type="email" name="ticket_email " required>
+                            
                         </div>';
                     }
                     echo'
                     <div>
-                    <label for="ticket_subject"><b>Subject</b></label>
-                    <input type="text" placeholder="Enter Subject" name="ticket_subject" required>
+                    <label for="ticket_subject">Subject</label>
+                    <input id="ticket_subject" type="text" placeholder="Enter Subject" name="ticket_subject" required>
                     </div>
                     <div>
-                    <label for="ticket_type"><b>Type</b></label>
+                    <label for="ticket_type">Type</label>
                     <select name="ticket_type" required>
                         <option value="">--Please choose an option--</option>';
                         for ($i = 0; $i < count($ticket_type_arr); $i++) { 
@@ -192,7 +195,7 @@ switch($_POST['function']){
                     </select>
                     </div>
                     <div>
-                    <label for="ticket_priority"><b>Priority</b></label>
+                    <label for="ticket_priority">Priority</label>
                     <select name="ticket_priority" required>
                         <option value="">--Please choose an option--</option>';
                         for ($i = 0; $i < count($ticket_priority_arr); $i++) { 
@@ -202,13 +205,19 @@ switch($_POST['function']){
                     </select>
                     </div>
                     <div>
-                    <label for="ticket_content"><b>Content</b></label>
-                    <textarea placeholder="Enter Content" name="ticket_content" required></textarea>
+                 
+                    <textarea placeholder="Enter Content" name="ticket_content"  rows="3" cols="50" required></textarea><br /><br />
                     </div>
-                    <button type="button" onclick="createTicket()" class="btn">Send</button>
-                    <button type="button" class="btn cancel" onclick="closePopup()">Close</button>
+
+                    <div class="popupBtn-container">
+                    <button type="button" onclick="createTicket()" class="popup-btn">Send</button>
+                    <button type="button" class="popup-btn" onclick="closePopup()">Close</button>
+                    </div>
+                </div>
                 </form>
-                </div>';
+               
+                </div>
+                <div class="overlay" ></div>';
                 break;
 
             case 'popup_sure_del_ticket':

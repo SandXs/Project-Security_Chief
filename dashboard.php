@@ -53,7 +53,7 @@ if ($user['user_is_new']==0){
         <button class="openColos-btn" onclick="openTicketCreate()">Create ticket</button>
         <button class="openColos-btn" onclick="sure_del_ticket()">Delete ticket(s)</button>
         </div>
-        <table id="userslist" class="table-content">
+        <table id="userslist" class="table-content2">
           <thead>
             <tr>
               <th><input type="checkbox" id="checkAllUsers"></th>
@@ -105,7 +105,7 @@ if ($user['user_is_new']==0){
 ?>
 
 <script>
-  //  openTicketCreate() 
+   openTicketCreate() 
 function closePopup() {
     $(".popups").empty();
     $("body .popups").css({
@@ -326,6 +326,7 @@ function confirmChangePass() {
         }
     }
 }
+
 </script>
 <?php
 if (isset($_POST['signout'])) {
