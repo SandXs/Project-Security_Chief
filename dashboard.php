@@ -105,7 +105,7 @@ if ($user['user_is_new']==0){
 ?>
 
 <script>
-   openTicketCreate() 
+
 function closePopup() {
     $(".popups").empty();
     $("body .popups").css({

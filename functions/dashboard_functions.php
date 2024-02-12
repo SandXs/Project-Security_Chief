@@ -204,11 +204,7 @@ switch($_POST['function']){
                         echo '
                     </select>
                     </div>
-                    <div>
-                 
-                    <textarea placeholder="Enter Content" name="ticket_content"  rows="3" cols="50" required></textarea><br /><br />
-                    </div>
-
+                    <textarea placeholder="Enter Content" name="ticket_content" rows="3" cols="50" required></textarea>
                     <div class="popupBtn-container">
                     <button type="button" onclick="createTicket()" class="popup-btn">Send</button>
                     <button type="button" class="popup-btn" onclick="closePopup()">Close</button>
@@ -217,7 +213,7 @@ switch($_POST['function']){
                 </form>
                
                 </div>
-                <div class="overlay" ></div>';
+                <div class="overlay" onclick="closePopup()" ></div>';
                 break;
 
             case 'popup_sure_del_ticket':
@@ -225,10 +221,13 @@ switch($_POST['function']){
                 <div class="form-popup Popup_wrapper">
                     <div class="form-container">
                         <h1>Weet u zeker dat u deze ticket(s) wilt verwijderen</h1>
-                        <button type="button" onclick="delTicket()" class="btn cancel">Verwijderen</button>
-                        <button type="button" class="btn" onclick="closePopup()">Annuleren</button>
+                        <div class="btn-container">
+                        <button class="openColos-btn"onclick="delTicket()">Verwijderen</button>
+                        <button type="button" class="openColos-btn" onclick="closePopup()">Annuleren</button>
+                        </div>
                     </div>
-                </div>';
+                </div>
+                <div class="overlay"  onclick="closePopup()"></div>';
                 break;
 
             case 'popup_ticket_edit':

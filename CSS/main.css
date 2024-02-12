@@ -8,11 +8,12 @@
 .overlay {
   background-color: #444444;
   position: absolute;
+  height: 100vh;
   min-height: 100%;
   width: 100%;
   top: 0;
   opacity: 0.5;
-  z-index: -1;
+  z-index: 1;
 }
 
 .popups {
@@ -21,13 +22,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: aqua;
 }
 
 .Popup_wrapper {
   display: flex;
   justify-content: center;
-  background-color: aquamarine;
   width: 100%;
   height: auto;
   font-weight: 500;
@@ -107,6 +106,7 @@
 
 /* Add styles to the popup form container */
 .form-container {
+  z-index: 3;
   width: 50%;
   margin: auto;
   background-color: white;
@@ -123,7 +123,6 @@
 .form-container label {
   width: 100%;
   font-size: 18px;
-  margin: 5px;
   position: relative;
 }
 
@@ -139,14 +138,24 @@
   border: none;
   border-bottom: 1px solid black;
   border-right: 1px solid black;
+  width: 90%;
+}
+
+.form-container input::-moz-placeholder {
+  font-size: 15px;
+}
+
+.form-container input::placeholder {
+  font-size: 15px;
 }
 
 .form-container textarea {
   outline: none;
   resize: none;
-  margin-top: 10px;
+  margin: 10px;
   padding: 4px;
   font-weight: 500;
+  width: 80%;
 }
 
 .tickets-content {
@@ -198,6 +207,9 @@
   }
   .table-content2 {
     width: 60vw;
+  }
+  .form-container {
+    width: 90%;
   }
 }
 @media only screen and (max-width: 650px) {
