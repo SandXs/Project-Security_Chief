@@ -32,7 +32,7 @@ if (isset($_POST['signin'])) {
             <h1 class="loginTitle"> Login</h1>
                 <form id="login" method="post">
                     <div class="from_input">
-                        <input type="text" name="email" id="email" placeholder="email"  autocomplete="off" required>
+                        <input type="text" name="email" id="email" placeholder="email"  required>
                         <input type="password" name="password" id="password" placeholder="WachtWoord"  autocomplete="off" required>
                     </div>
                     <div class="submit_btn">

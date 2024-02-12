@@ -51,7 +51,12 @@ include("tools.php");
                             Info
                         </a>
                     </li>
-
+                    <li class="list_item">
+                        <a href="./dashboard.php">
+                            <i class="fa-solid fa-circle-info"></i>
+                            Dashboard
+                        </a>
+                    </li>
                 </div>
                 <div class="list2">
                     <li class="list_item">
