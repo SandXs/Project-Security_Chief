@@ -1,4 +1,4 @@
-<?php
+<?php session_start();       // Start the session
 include("tools.php");
 ?>
 <!DOCTYPE html>
@@ -52,7 +52,7 @@ include("tools.php");
                         </a>
                     </li>
                     <li class="list_item">
-                        <a href="./dashboard.php">
+                        <a href="./dashboard.php?id=<?php echo $_SESSION['id'];?>">
                         <i class="fa-solid fa-table-list"></i>
                             Dashboard
                         </a>
