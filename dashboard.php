@@ -1,4 +1,4 @@
-<?php session_start();       // Start the session
+<?php //session_start();       // Start the session
 include("Header.php");
 
 if (!isset($_SESSION['id'])) {         // condition Check: if session is not set. 

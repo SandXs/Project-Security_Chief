@@ -596,7 +596,7 @@ input[type=number] {
   width: 100%;
 }
 
-.submit_btn button {
+.submit_btn div {
   background-color: #8EACCD;
   color: #fff;
   border: none;
@@ -609,7 +609,7 @@ input[type=number] {
   transition: all 50ms ease-in-out;
 }
 
-.submit_btn button:active {
+.submit_btn div:active {
   transform: scale(0.98);
 }
 
