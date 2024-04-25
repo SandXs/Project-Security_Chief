@@ -3,7 +3,9 @@ require("../tools.php");
 //$user = Get_user_info(Fast_decrypt($_SESSION['id']));
 $user = Get_user_info($_SESSION['id']);
 
+//Functions based on action on dashboard
 switch($_POST['function']){
+    //Load all active/relavant tickets for the user/administrator
     case 'load_Tickets':
         $con = connectdb();
         if($GLOBALS['user']['user_is_admin'] == 1){
@@ -31,7 +33,8 @@ switch($_POST['function']){
         echo $ticket_row;
         mysqli_close($con);
         break;
-
+    
+    //Ticket create function - creates new tickets
     case 'create_ticket':
         $con = connectdb();
         $query = 'INSERT INTO tickets SET 
@@ -45,13 +48,15 @@ switch($_POST['function']){
         mysqli_query($con, $query);
         mysqli_close($con);
         break;
-
+    
+    //Delete selected tickets
     case 'del_ticket':
         $con = connectdb();
         $query = 'UPDATE tickets SET ticket_del = 1 WHERE ticket_id IN ('.implode(",",$_POST['ticket_id']).')';
         mysqli_query($con, $query);
         mysqli_close($con);
         break;
+    
     
     case 'save_edited_ticket':
         $con = connectdb();
