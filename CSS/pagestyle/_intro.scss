@@ -109,7 +109,7 @@
     transform: rotate(20deg);
 }
 .intro-foto {
-    width: 45vw;
+    width: 30vw;
     filter: brightness(80%);
 }
 
@@ -129,6 +129,7 @@
         opacity: 0.5;
         z-index: 1;
         filter: brightness(50%);
+        width: 45vw;
     }
     .info-text{
         min-width: 100%;   

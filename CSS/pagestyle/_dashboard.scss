@@ -17,10 +17,13 @@
   opacity: 0.5;
   z-index: 1;
 }
+#ticketlist{
+  position: relative;
+}
 .popups{
- 
+
   width: 100%;
-  height: 100%;
+  height: 100%; 
   display: flex;
   align-items: center;
   justify-content: center;

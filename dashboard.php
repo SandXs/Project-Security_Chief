@@ -218,7 +218,6 @@ $("#ticketlist").on("click", "tbody tr", function() {
         $("body .popups").last().append(data);
         $("body .popups").css({
             "position": "absolute",
-            "z-index": "999"
         });
     });
 });
