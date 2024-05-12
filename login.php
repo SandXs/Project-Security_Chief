@@ -24,7 +24,7 @@ include("Header.php");
                     <input type="password" name="password" id="password" placeholder="WachtWoord"  autocomplete="off" required>
                 </div>
                 <div class="submit_btn">
-                    <div onclick="login()" name="signin" id='signin'>Signin</div>
+                    <button onclick="login()" name="signin" id='signin'>Signin</button>
                 </div>
             </form >
             <!-- <p><a href="#">Vergeet Wachtwoord </a> </p> -->

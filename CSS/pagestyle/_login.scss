@@ -50,7 +50,7 @@
     justify-content: center;
     width: 100%;
 }
-.submit_btn div{
+.submit_btn button{
     background-color: $primery_color_3;
     color:#fff;
     border: none;
@@ -63,7 +63,7 @@
     transition: all 50ms ease-in-out;
     
 }
-.submit_btn div:active{
+.submit_btn button:active{
     transform: scale(0.98);
 }
 @media only screen and (max-width: 850px) {

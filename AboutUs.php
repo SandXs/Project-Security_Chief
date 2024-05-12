@@ -5,9 +5,9 @@ include './Header.php';
 ?>
 
 <script>
-setTimeout(function() {
-    window.location.reload(1);
-}, 5000);
+// setTimeout(function() {
+//     window.location.reload(1);
+// }, 5000);
 </script>
 
 
