@@ -10,8 +10,8 @@ include("Header.php");
         email: $("input#email").val(),
         password: $("input#password").val()
       }).done(function(data) {
-        window.location.href = data;
-        //console.log(data);
+        //window.location.href = data;
+        console.log(data);
         });
     }
   </script>
@@ -24,7 +24,7 @@ include("Header.php");
                     <input type="password" name="password" id="password" placeholder="WachtWoord"  autocomplete="off" required>
                 </div>
                 <div class="submit_btn">
-                    <button onclick="login()" name="signin" id='signin'>Signin</button>
+                    <div onclick="login()" name="signin" id='signin'>Signin</div>
                 </div>
             </form >
             <!-- <p><a href="#">Vergeet Wachtwoord </a> </p> -->
