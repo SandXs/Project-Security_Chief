@@ -602,7 +602,7 @@ input[type=number] {
   width: 100%;
 }
 
-.submit_btn button {
+.submit_btn div {
   background-color: #8EACCD;
   color: #fff;
   border: none;

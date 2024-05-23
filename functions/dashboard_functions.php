@@ -1,10 +1,15 @@
-<?php session_start();       // Start the session
+<?php
+session_start();       // Start the session
 require("../tools.php");
 //$user = Get_user_info(Fast_decrypt($_SESSION['id']));
 $user = Get_user_info($_SESSION['id']);
 
 //Functions based on action on dashboard
 switch($_POST['function']){
+    case 'logout':
+        echo'/index.php';
+        session_destroy();  
+        break;
     //Load all active/relavant tickets for the user/administrator
     case 'load_Tickets':
         $con = connectdb();
@@ -38,7 +43,7 @@ switch($_POST['function']){
     case 'create_ticket':
         $con = connectdb();
         $query = 'INSERT INTO tickets SET 
-            ticket_email = "'.test_input($con,(($_POST['ticket_email'])!==""?$_POST['ticket_email']:$GLOBALS['user']['user_email'])).'",
+            ticket_email = "'.test_input($con,((isset($_POST['ticket_email']))?$_POST['ticket_email']:$GLOBALS['user']['user_email'])).'",
             ticket_subject = "'.test_input($con,$_POST['ticket_subject']).'",
             ticket_type = '.intval(test_input($con,$_POST['ticket_type'])).',
             ticket_content = "'.test_input($con,$_POST['ticket_content']).'",

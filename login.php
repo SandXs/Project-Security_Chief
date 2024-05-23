@@ -1,7 +1,5 @@
 <?php
-//session_start();
 include("Header.php");
-
 ?>
   <script>
     function login() {
@@ -10,9 +8,8 @@ include("Header.php");
         email: $("input#email").val(),
         password: $("input#password").val()
       }).done(function(data) {
-        //window.location.href = data;
-        console.log(data);
-        });
+        window.location.href = data;
+    })
     }
   </script>
   <section class="login-container">

@@ -51,12 +51,16 @@ include("tools.php");
                             Info
                         </a>
                     </li>
-                    <li class="list_item">
-                        <a href="./dashboard.php?id=<?php echo $_SESSION['id'];?>">
-                        <i class="fa-solid fa-table-list"></i>
-                            Dashboard
-                        </a>
-                    </li>
+                    <?php
+                    if(isset($_SESSION['id'])){
+                        echo "<li class='list_item'>
+                            <a href='./dashboard.php?id='".$_SESSION["id"]."'>
+                                <i class='fa-solid fa-table-list'></i>
+                                Dashboard
+                            </a>
+                        </li>";
+                    }
+                    ?>
                 </div>
                 <div class="list2">
                     <li class="list_item">

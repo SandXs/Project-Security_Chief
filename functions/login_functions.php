@@ -14,11 +14,12 @@ switch($_POST['function']) {
             //echo'login failed';
             exit;
         }
-
+        
         if (!password_verify($password,$user['user_pass'])) {
-            echo'/login.php'; 
+            echo'/login.php';
             
         } else {
+            session_start();
             $_SESSION['id'] = $user['user_id'];       // Storing the value in session
             //! Session data can be hijacked. Never store personal data such as password, security pin, credit card numbers other important data in $_SESSION
             echo'/dashboard.php?id=' . $user['user_id'];

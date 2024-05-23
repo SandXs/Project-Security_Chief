@@ -1,48 +1,49 @@
 <?php //session_start();       // Start the session
 include("Header.php");
 
+//check if user is logged in or not
 if (!isset($_SESSION['id'])) {         // condition Check: if session is not set. 
   header('location: login.php');   // if not set the user is sendback to login page.
 }
 
-//$user = Get_user_info(Fast_decrypt($_SESSION['id']));
+//Get active user data
 $user = Get_user_info($_SESSION['id']);
+
 if ($user['user_is_new']==0){
   echo'
- 
-  <div class="table-container">
-  <form action="" method="post">
-  <div class="signout-btn-container">
-  <button type="submit" name="signout" class="signout-btn"> Sign Out</button>
-  </div>
-</form>
-  <div class="popups"></div>
-    <div id="tickets" class="tickets-content">
-      <h1 class=" mt-3 text-center">Welcome, this is your dashboard!! </h1>
-     
-      <h2>'.(($GLOBALS['user']['user_is_admin'] == 1) ? "All active tickets" : "My tickets").'</h2>
-      <!-- A button to open the popup form -->
-      <div class="btn-container">
-      <button class="openColos-btn" onclick="openTicketCreate()">Create ticket</button>
-      <button class="openColos-btn" onclick="sure_del_ticket()">Delete ticket(s)</button>
-      </div>
+    <div class="table-container">
+        <form action="" method="post">
+            <div class="signout-btn-container">
+                <div onclick="signout()" name="signout" class="signout-btn"> Sign Out</div>
+            </div>
+        </form>
+        <div class="popups"></div>
+        <div id="tickets" class="tickets-content">
+        <h1 class=" mt-3 text-center">Welcome, this is your dashboard!! </h1>
+        
+        <h2>'.(($GLOBALS['user']['user_is_admin'] == 1) ? "All active tickets" : "My tickets").'</h2>
+        <!-- A button to open the popup form -->
+        <div class="btn-container">
+        <button class="openColos-btn" onclick="openTicketCreate()">Create ticket</button>
+        <button class="openColos-btn" onclick="sure_del_ticket()">Delete ticket(s)</button>
+        </div>
 
-      <table id="ticketlist" class="table-content">
-        <thead>
-          <tr>
-            <th>'.(($GLOBALS['user']['user_is_admin'] == 1) ? "<input type='checkbox' id='checkAllTickets'>" : "").'</th>
-            <th>ID</th>
-            <th>Priority</th>
-            <th>Type</th>
-            <th>Subject</th>
-            <th>Content</th>
-            <th>Email</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-        </tbody>
-      </table>
+        <table id="ticketlist" class="table-content">
+            <thead>
+            <tr>
+                <th>'.(($GLOBALS['user']['user_is_admin'] == 1) ? "<input type='checkbox' id='checkAllTickets'>" : "").'</th>
+                <th>ID</th>
+                <th>Priority</th>
+                <th>Type</th>
+                <th>Subject</th>
+                <th>Content</th>
+                <th>Email</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
       
     </div>';
     if($GLOBALS['user']['user_is_admin'] == 1){
@@ -50,8 +51,8 @@ if ($user['user_is_new']==0){
       <div id="users" class="tickets-content">
         <h2>All users</h2>
         <div class="btn-container">
-        <button class="openColos-btn" onclick="openTicketCreate()">Create ticket</button>
-        <button class="openColos-btn" onclick="sure_del_ticket()">Delete ticket(s)</button>
+        <button class="openColos-btn" onclick="openUserCreate()">Create user</button>
+        <button class="openColos-btn" onclick="sure_del_user()">Delete user(s)</button>
         </div>
         <table id="userslist" class="table-content2">
           <thead>
@@ -326,10 +327,11 @@ function confirmChangePass() {
     }
 }
 
-</script>
-<?php
-if (isset($_POST['signout'])) {
-  session_destroy();            //  destroys session 
-  header('location: index.php');
+function signout() {
+    $.post("functions/dashboard_functions.php", {
+        function: "logout",
+    }).done(function(data) {
+        window.location.href = data;
+    })
 }
-?>
+</script>
