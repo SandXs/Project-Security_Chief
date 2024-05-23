@@ -309,9 +309,10 @@ switch($_POST['function']){
                         </div>';
                     }
                     echo'
-                    
-                    <button type="button" onclick="save_edited_ticket()" class="btn">Save</button>
-                    <button type="button" class="btn cancel" onclick="closePopup()">Close</button>
+                    <div class="popupBtn-container">
+                    <button type="button" onclick="save_edited_ticket()" class="popup-btn">Save</button>
+                    <button type="button" class="popup-btn cancel" onclick="closePopup()">Close</button>
+                    </div>
                 </form>
                 </div>';
                 mysqli_close($con);
@@ -342,8 +343,10 @@ switch($_POST['function']){
                             <label for="user_is_admin"><b>is Admin</b></label>
                             <input type="checkbox" name="user_is_admin">
                         </div>
+                        <div class="popupBtn-container">
                         <button type="button" onclick="createUser()" class="btn">Send</button>
                         <button type="button" class="btn cancel" onclick="closePopup()">Close</button>
+                        </div>
                     </form>
                 </div>';
                 break;
@@ -377,10 +380,12 @@ switch($_POST['function']){
                         </div>
                         <div>
                             <label for="user_is_admin"><b>is Admin</b></label>
-                            <input type="checkbox" '.(($user['user_id']==1)?"checked":"").' name="user_is_admin">
+                            <input type="checkbox" '.(($user['user_is_admin']==1)?"checked":"").' name="user_is_admin">
                         </div>
-                        <button type="button" onclick="saveEditedUser()" class="btn">Send</button>
-                        <button type="button" class="btn cancel" onclick="closePopup()">Close</button>
+                        <div class="popupBtn-container">
+                        <button type="button" onclick="saveEditedUser()" class="popup-btn">Send</button>
+                        <button type="button" class="popup-btn cancel" onclick="closePopup()">Close</button>
+                        </div>
                     </form>
                     </div>
                 </div>';
@@ -391,8 +396,8 @@ switch($_POST['function']){
                 <div class="form-popup Popup_wrapper">
                     <div class="form-container">
                         <h1>Weet u zeker dat u deze user(s) wilt verwijderen</h1>
-                        <button type="button" onclick="delUsers()" class="btn cancel">Verwijderen</button>
-                        <button type="button" class="btn" onclick="closePopup()">Annuleren</button>
+                        <button type="button" onclick="delUsers()" class="popup-btn cancel">Verwijderen</button>
+                        <button type="button" class="popup-btn" onclick="closePopup()">Annuleren</button>
                     </div>
                 </div>';
                 break;

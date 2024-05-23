@@ -62,7 +62,7 @@ if ($user['user_is_new']==0){
               <th>Name</th>
               <th>Company</th>
               <th>Email</th>
-              <th></th>
+              <th>Admin</th>
             </tr>
           </thead>
           <tbody>
@@ -297,7 +297,7 @@ function saveEditedUser() {
 }
 
 //edit users
-$("#userslist").on("click", "tbody tr", function() {
+$("#userslist").on("click", "tbody tr td", function() {
     $.post("functions/dashboard_functions.php", {
         function: "popups",
         type_popup: "popup_user_edit",
